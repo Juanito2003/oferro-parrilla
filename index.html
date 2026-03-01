@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Ferro Parrilla — Restaurante en Verín, Ourense | Carnes a la Brasa</title>
+  <meta name="description" content="O Ferro Parrilla, restaurante de carnes a la brasa en Verín, Ourense. Producto de primera calidad, 4,6 estrellas en Google. Menú del día L–V, menú degustación fines de semana. Reservas: 988 09 89 54." />
+  <meta name="keywords" content="restaurante Verín, parrilla Verín, carne a la brasa Ourense, restaurante Ourense, O Ferro, reservas Verín" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="O Ferro Parrilla — Restaurante en Verín, Ourense" />
+  <meta property="og:description" content="Carnes a la brasa de primera calidad. Onde o lume fai a tradición. Reservas: 988 09 89 54" />
+  <meta property="og:type" content="restaurant" />
+
+  <!-- Schema.org Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "O Ferro Parrilla",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. de Castilla, 49",
+      "addressLocality": "Verín",
+      "postalCode": "32627",
+      "addressRegion": "Ourense",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34988098954",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "reviewCount": "132"
+    },
+    "servesCuisine": ["Galician", "Grilled meats"],
+    "priceRange": "€€",
+    "hasMap": "https://maps.app.goo.gl/cNvkHTzqgiZGTLTEA"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===================== RESET & VARIABLES ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ember:    #C4501A;
+      --ember-dk: #8B2E0A;
+      --coal:     #151210;
+      --charcoal: #1E1A18;
+      --smoke:    #2C2521;
+      --ash:      #3D3531;
+      --stone:    #6B5E58;
+      --bone:     #F2EDE6;
+      --cream:    #FBF8F3;
+      --gold:     #B8935A;
+      --gold-lt:  #D4AD78;
+
+      --font-display: 'Italiana', serif;
+      --font-serif:   'Cormorant Garamond', serif;
+      --font-sans:    'Jost', sans-serif;
+
+      --section-pad: clamp(5rem, 10vw, 9rem);
+      --container:   min(1180px, 92vw);
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--coal);
+      color: var(--bone);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: var(--ember); color: #fff; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--coal); }
+    ::-webkit-scrollbar-thumb { background: var(--ember); border-radius: 3px; }
+
+    /* ===================== UTILITY ===================== */
+    .container { width: var(--container); margin-inline: auto; }
+
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      color: var(--bone);
+      margin-top: .5rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      font-style: italic;
+      color: var(--stone);
+      margin-top: 1rem;
+      line-height: 1.7;
+      max-width: 55ch;
+    }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--ember);
+      margin: 1.5rem 0;
+    }
+
+    /* ===================== HEADER ===================== */
+    #site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      transition: background .4s, backdrop-filter .4s, padding .3s;
+      padding: 1.4rem 0;
+      background: linear-gradient(to bottom, rgba(15,11,9,.75) 0%, transparent 100%);
+    }
+
+    #site-header.scrolled {
+      background: rgba(21, 18, 16, .92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: .9rem 0;
+      border-bottom: 1px solid rgba(180, 147, 90, .15);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg { width: 22px; height: 22px; fill: var(--gold); }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-main {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: .08em;
+      color: var(--bone);
+      text-shadow: 0 1px 8px rgba(0,0,0,.8);
+    }
+
+    .logo-sub {
+      font-family: var(--font-sans);
+      font-size: .62rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+      text-shadow: 0 1px 6px rgba(0,0,0,.9);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .main-nav a {
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, .7);
+      transition: color .25s;
+      position: relative;
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width .3s;
+    }
+
+    .main-nav a:hover { color: var(--bone); }
+    .main-nav a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--ember);
+      color: #fff !important;
+      padding: .55rem 1.4rem;
+      font-size: .72rem !important;
+      letter-spacing: .22em !important;
+      transition: background .25s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--ember-dk) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--bone);
+      transition: .3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(21, 18, 16, .97);
+      border-top: 1px solid rgba(180, 147, 90, .2);
+      padding: 1rem 0;
+    }
+
+    .mobile-nav a {
+      padding: .9rem 1.5rem;
+      font-size: .8rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, .8);
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: color .2s, padding-left .2s;
+    }
+
+    .mobile-nav a:hover { color: var(--gold); padding-left: 2rem; }
+
+    @media (max-width: 860px) {
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav.open { display: flex; }
+    }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.04);
+      animation: heroZoom 14s ease-out forwards;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(15, 11, 9, 1) 0%,
+        rgba(15, 11, 9, .75) 35%,
+        rgba(15, 11, 9, .3) 65%,
+        rgba(15, 11, 9, .2) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-bottom: clamp(3.5rem, 8vh, 6rem);
+      padding-inline: clamp(1.5rem, 5vw, 4rem);
+      max-width: 820px;
+      animation: heroFadeUp .9s .2s both;
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-tag {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 1px 6px rgba(0,0,0,.9);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(4.5rem, 12vw, 9rem);
+      line-height: .88;
+      letter-spacing: .02em;
+      color: var(--bone);
+      margin-bottom: .6rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,.6);
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--ember);
+      text-shadow: 0 2px 20px rgba(0,0,0,.5);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: rgba(242, 237, 230, .85);
+      margin-bottom: 2.4rem;
+      max-width: 44ch;
+      line-height: 1.55;
+      text-shadow: 0 1px 10px rgba(0,0,0,.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: .9rem 2rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all .25s;
+    }
+
+    .btn-fire {
+      background: var(--ember);
+      color: #fff;
+    }
+    .btn-fire:hover { background: var(--ember-dk); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--bone);
+      border-color: rgba(242, 237, 230, .4);
+    }
+    .btn-ghost:hover { border-color: var(--bone); background: rgba(255,255,255,.05); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      right: clamp(1.5rem, 5vw, 4rem);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      opacity: .5;
+      animation: heroFadeUp .9s .8s both;
+    }
+
+    .hero-scroll span {
+      font-size: .6rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: .5; }
+      50% { opacity: 1; }
+    }
+
+    .hero-rating {
+      position: absolute;
+      top: 50%;
+      right: clamp(1.5rem, 6vw, 5rem);
+      transform: translateY(-50%);
+      z-index: 2;
+      text-align: right;
+      animation: heroFadeUp .9s .5s both;
+    }
+
+    .rating-number {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--bone);
+    }
+
+    .rating-stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: .1em;
+      margin: .3rem 0;
+    }
+
+    .rating-count {
+      font-size: .65rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, .5);
+    }
+
+    @media (max-width: 640px) {
+      .hero-rating { display: none; }
+    }
+
+    /* ===================== TICKER ===================== */
+    .ticker-bar {
+      background: var(--ember);
+      padding: .75rem 0;
+      overflow: hidden;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 4rem;
+      animation: ticker 22s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-item {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .ticker-item::before {
+      content: '✦';
+      font-size: .5rem;
+      opacity: .7;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ===================== NOSOTROS ===================== */
+    #nosotros {
+      padding: var(--section-pad) 0;
+      background: var(--charcoal);
+      overflow: hidden;
+    }
+
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .nosotros-text { max-width: 52ch; }
+
+    .nosotros-body {
+      font-family: var(--font-serif);
+      font-size: clamp(.95rem, 3.5vw, 1.15rem);
+      line-height: 1.8;
+      color: rgba(242, 237, 230, .7);
+      margin-top: 1.5rem;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+    }
+
+    .nosotros-body p + p { margin-top: 1.2rem; }
+
+    .nosotros-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(180, 147, 90, .2);
+    }
+
+    .stat-item { }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--ember);
+    }
+
+    .stat-label {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: .3rem;
+    }
+
+    .nosotros-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: .8rem;
+    }
+
+    .img-tall {
+      grid-row: span 2;
+      aspect-ratio: 3/5;
+      overflow: hidden;
+    }
+
+    .img-square {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .nosotros-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .nosotros-images div:hover img { transform: scale(1.04); }
+
+    @media (max-width: 860px) {
+      .nosotros-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .nosotros-text { max-width: none; }
+    }
+
+    /* ===================== PARRILLA ===================== */
+    #parrilla {
+      padding: var(--section-pad) 0;
+      background: var(--coal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #parrilla::before {
+      content: 'BRASA';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(8rem, 20vw, 18rem);
+      color: rgba(255,255,255,.018);
+      pointer-events: none;
+      white-space: nowrap;
+      letter-spacing: .1em;
+    }
+
+    .parrilla-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .parrilla-header .divider { margin-inline: auto; }
+
+    .parrilla-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(180, 147, 90, .12);
+    }
+
+    .feature-card {
+      background: var(--charcoal);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .3s;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--ember);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s;
+    }
+
+    .feature-card:hover { background: var(--smoke); }
+    .feature-card:hover::before { transform: scaleX(1); }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(180, 147, 90, .35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .feature-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--bone);
+      margin-bottom: .6rem;
+    }
+
+    .feature-text {
+      font-size: .88rem;
+      line-height: 1.75;
+      color: var(--stone);
+    }
+
+    @media (max-width: 720px) {
+      .parrilla-features { grid-template-columns: 1fr; }
+    }
+
+    /* ===================== ESPECIALIDADES ===================== */
+    #especialidades {
+      padding: var(--section-pad) 0;
+      background: var(--charcoal);
+    }
+
+    .especialidades-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .platos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .plato-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .plato-card:first-child {
+      grid-column: span 2;
+    }
+
+    .plato-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .plato-card:first-child .plato-img {
+      height: 420px;
+    }
+
+    .plato-card:hover .plato-img { transform: scale(1.05); }
+
+    .plato-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,11,9,.9) 0%, rgba(15,11,9,.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.8rem;
+      transition: background .3s;
+    }
+
+    .plato-card:hover .plato-overlay {
+      background: linear-gradient(to top, rgba(15,11,9,.95) 0%, rgba(15,11,9,.4) 60%, rgba(15,11,9,.1) 100%);
+    }
+
+    .plato-cat {
+      font-size: .62rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .4rem;
+    }
+
+    .plato-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--bone);
+      line-height: 1.2;
+      margin-bottom: .5rem;
+    }
+
+    .plato-desc {
+      font-size: .82rem;
+      color: rgba(242,237,230,.6);
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s;
+    }
+
+    .plato-card:hover .plato-desc { max-height: 80px; }
+
+    @media (max-width: 860px) {
+      .platos-grid { grid-template-columns: 1fr 1fr; }
+      .plato-card:first-child { grid-column: span 2; }
+    }
+
+    @media (max-width: 560px) {
+      .platos-grid { grid-template-columns: 1fr; }
+      .plato-card:first-child { grid-column: span 1; }
+    }
+
+    /* ===================== MENU DEL DIA ===================== */
+    #menu-dia {
+      padding: var(--section-pad) 0;
+      background: var(--coal);
+      position: relative;
+      z-index: 2;
+      clear: both;
+    }
+
+    .menu-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .menu-card {
+      background: var(--charcoal);
+      border: 1px solid rgba(180, 147, 90, .15);
+      padding: 3rem;
+    }
+
+    .menu-price-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--ember);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .menu-price-badge .price {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .menu-price-badge .price-label {
+      font-size: .6rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+      margin-top: 2px;
+    }
+
+    .menu-course {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .menu-course:last-child { border-bottom: none; }
+
+    .course-header {
+      font-size: .65rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .6rem;
+    }
+
+    .course-items {
+      list-style: none;
+    }
+
+    .course-items li {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: rgba(242, 237, 230, .75);
+      padding: .2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .course-items li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ember);
+      font-size: .7rem;
+    }
+
+    .menu-includes {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      background: rgba(180, 147, 90, .08);
+      border-left: 2px solid var(--gold);
+    }
+
+    .menu-includes p {
+      font-size: .8rem;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+
+    .menu-info { }
+
+    .menu-info .section-subtitle {
+      max-width: none;
+    }
+
+    .menu-services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .service-pill {
+      background: var(--charcoal);
+      border: 1px solid rgba(180, 147, 90, .2);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .service-pill svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    .service-pill span {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, .7);
+    }
+
+    @media (max-width: 860px) {
+      .menu-layout { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ===================== RESENAS ===================== */
+    #resenas {
+      padding: var(--section-pad) 0;
+      background: var(--smoke);
+    }
+
+    .resenas-header { text-align: center; margin-bottom: 3.5rem; }
+    .resenas-header .divider { margin-inline: auto; }
+
+    .rating-showcase {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .rating-big {
+      font-family: var(--font-display);
+      font-size: 7rem;
+      line-height: 1;
+      color: var(--bone);
+    }
+
+    .rating-detail { }
+
+    .stars-row {
+      color: var(--gold);
+      font-size: 1.6rem;
+      letter-spacing: .1em;
+    }
+
+    .rating-meta {
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-top: .4rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--charcoal);
+      padding: 2rem;
+      border-top: 2px solid var(--ember);
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: .85rem;
+      letter-spacing: .1em;
+      margin-bottom: 1rem;
+    }
+
+    .review-text {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: rgba(242, 237, 230, .75);
+      margin-bottom: 1.5rem;
+    }
+
+    .review-author {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .review-platform {
+      font-size: .62rem;
+      color: var(--gold);
+      letter-spacing: .15em;
+    }
+
+    @media (max-width: 860px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===================== RESERVAS ===================== */
+    #reservas {
+      padding: var(--section-pad) 0;
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #reservas::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 50%, rgba(196, 80, 26, .08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .reservas-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .reservas-info { }
+
+    .tel-display {
+      margin-top: 2.5rem;
+    }
+
+    .tel-label {
+      font-size: .65rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: .8rem;
+    }
+
+    .tel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--bone);
+      transition: color .25s;
+    }
+
+    .tel-link:hover { color: var(--gold); }
+
+    .tel-link svg {
+      width: 36px;
+      height: 36px;
+      stroke: var(--ember);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .tel-note {
+      margin-top: 1rem;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(242, 237, 230, .45);
+    }
+
+    .reservas-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(196, 80, 26, .12);
+      border: 1px solid rgba(196, 80, 26, .3);
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .notice-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--ember);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .notice-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .notice-text strong {
+      display: block;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: .3rem;
+    }
+
+    .notice-text p {
+      font-size: .88rem;
+      color: rgba(242, 237, 230, .65);
+      line-height: 1.6;
+    }
+
+    .horarios-card {
+      background: var(--coal);
+      border: 1px solid rgba(180, 147, 90, .15);
+      padding: 2.5rem;
+    }
+
+    .horarios-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--bone);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(180, 147, 90, .2);
+    }
+
+    .horario-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+
+    .horario-row:last-child { border-bottom: none; }
+
+    .horario-day {
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(242, 237, 230, .5);
+    }
+
+    .horario-time {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--bone);
+    }
+
+    .horario-row.closed .horario-time {
+      color: var(--stone);
+      font-style: italic;
+    }
+
+    .reservas-cta-block {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 860px) {
+      .reservas-layout { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    /* ===================== UBICACION ===================== */
+    #ubicacion {
+      padding: var(--section-pad) 0;
+      background: var(--coal);
+    }
+
+    .ubicacion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .ubicacion-info { }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    .contact-list li:last-child { border-bottom: none; }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(180, 147, 90, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 17px;
+      height: 17px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .contact-detail strong {
+      display: block;
+      font-size: .65rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: .2rem;
+    }
+
+    .contact-detail span, .contact-detail a {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: rgba(242, 237, 230, .8);
+    }
+
+    .contact-detail a:hover { color: var(--gold); }
+
+    .map-wrap {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(180, 147, 90, .15);
+    }
+
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 400px;
+      border: 0;
+      filter: grayscale(80%) contrast(1.1) invert(90%);
+      opacity: .85;
+    }
+
+    @media (max-width: 860px) {
+      .ubicacion-grid { grid-template-columns: 1fr; }
+      .map-wrap iframe { height: 280px; }
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--coal);
+      border-top: 1px solid rgba(180, 147, 90, .12);
+      padding: 3rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      color: var(--bone);
+    }
+
+    .footer-logo small {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: .6rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--stone);
+    }
+
+    .footer-copy {
+      font-size: .68rem;
+      letter-spacing: .1em;
+      color: var(--ash);
+    }
+
+    /* ===================== FLOATING CTA ===================== */
+    .floating-cta {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--ember);
+      color: #fff;
+      padding: .85rem 1.5rem;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 32px rgba(196, 80, 26, .4);
+      transition: all .25s;
+      animation: popIn .5s 1.5s both;
+    }
+
+    .floating-cta:hover {
+      background: var(--ember-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(196, 80, 26, .5);
+    }
+
+    .floating-cta svg {
+      width: 18px;
+      height: 18px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .floating-cta { bottom: 1rem; right: 1rem; }
+    }
+
+    /* ===================== REVEAL ANIMATIONS ===================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    /* ===================== WOW: CHIMENEA FULLWIDTH ===================== */
+    .wow-chimenea {
+      position: relative;
+      height: clamp(38vh, 48vh, 560px);
+      overflow: hidden;
+    }
+
+    .wow-chimenea img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 55%;
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+
+    .wow-chimenea:hover img { transform: scale(1); }
+
+    .wow-chimenea-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(15,11,9,.85) 0%,
+        rgba(15,11,9,.5) 50%,
+        rgba(15,11,9,.1) 100%
+      );
+      display: flex;
+      align-items: center;
+      padding-left: clamp(2rem, 8vw, 8rem);
+    }
+
+    .wow-chimenea-text { }
+
+    .wow-quote {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: .9;
+      color: var(--bone);
+      margin-top: 1rem;
+      letter-spacing: .02em;
+    }
+
+    /* ===================== WOW: COMEDORES ===================== */
+    .wow-comedores {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      height: clamp(520px, 70vw, 880px);
+      position: relative;
+      z-index: 1;
+      isolation: isolate;
+    }
+
+    .wow-comedor-main {
+      height: 100%;
+    }
+
+    .wow-comedor-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      height: 100%;
+    }
+
+    .wow-comedor-item {
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+    }
+
+    .wow-comedor-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+      filter: brightness(.82);
+    }
+
+    .wow-comedor-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+
+    .wow-comedor-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.8rem;
+      background: linear-gradient(to top, rgba(15,11,9,.88) 0%, transparent 100%);
+      transform: translateY(6px);
+      transition: transform .3s;
+    }
+
+    .wow-comedor-item:hover .wow-comedor-caption { transform: translateY(0); }
+
+    .wow-comedor-caption p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: .95rem;
+      color: rgba(242,237,230,.65);
+      margin-top: .4rem;
+    }
+
+    @media (max-width: 720px) {
+      .wow-comedores {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .wow-comedor-main { height: 320px; }
+      .wow-comedor-side { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: 240px; }
+    }
+
+    /* ===================== CARTA COMPLETA ===================== */
+    #carta {
+      padding: var(--section-pad) 0;
+      background: var(--coal);
+    }
+
+    .carta-header {
+      margin-bottom: 3rem;
+    }
+
+    /* Tabs */
+    .carta-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(180,147,90,.2);
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .carta-tab {
+      background: none;
+      border: none;
+      padding: 1rem 1.8rem;
+      font-family: var(--font-sans);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      cursor: pointer;
+      position: relative;
+      transition: color .25s;
+    }
+
+    .carta-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--ember);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    .carta-tab:hover { color: var(--bone); }
+    .carta-tab.active { color: var(--bone); }
+    .carta-tab.active::after { transform: scaleX(1); }
+
+    /* Panels */
+    .carta-panel { display: none; }
+    .carta-panel.active { display: block; }
+
+    /* Grid */
+    .carta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(180,147,90,.08);
+    }
+
+    .carta-item {
+      background: var(--charcoal);
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.4rem;
+      transition: background .25s;
+      cursor: default;
+    }
+
+    .carta-item:hover { background: var(--smoke); }
+
+    .carta-item--featured {
+      grid-column: span 3;
+      padding: 2rem;
+      background: var(--smoke);
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .carta-item--featured .carta-item-img {
+      width: 280px;
+      height: 180px;
+      flex-shrink: 0;
+    }
+
+    .carta-item-img {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: var(--ash);
+    }
+
+    .carta-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .carta-item:hover .carta-item-img img { transform: scale(1.07); }
+
+    .carta-item-noimg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      background: rgba(180,147,90,.07);
+    }
+
+    .carta-item-info { flex: 1; }
+
+    .carta-badge {
+      display: inline-block;
+      font-size: .6rem;
+      font-weight: 600;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ember);
+      border: 1px solid rgba(196,80,26,.4);
+      padding: .2rem .7rem;
+      margin-bottom: .5rem;
+    }
+
+    .carta-item-name {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--bone);
+      line-height: 1.2;
+      margin-bottom: .35rem;
+    }
+
+    .carta-item-desc {
+      font-size: .8rem;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .carta-grid { grid-template-columns: repeat(2, 1fr); }
+      .carta-item--featured { grid-column: span 2; }
+    }
+
+    @media (max-width: 560px) {
+      .carta-grid { grid-template-columns: 1fr; }
+      .carta-item--featured { grid-column: span 1; flex-direction: column; }
+      .carta-item--featured .carta-item-img { width: 100%; height: 200px; }
+      .carta-tab { padding: .75rem 1rem; font-size: .68rem; }
+    }
+
+    /* Hero logo */
+    .hero-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(180,147,90,.4);
+      box-shadow: 0 0 40px rgba(196,80,26,.25);
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Footer logo */
+    .footer-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+    }
+
+    .footer-logo-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(180,147,90,.3);
+      flex-shrink: 0;
+    }
+
+    /* ===================== MOBILE RESPONSIVE COMPLETO ===================== */
+
+    /* Prevenir desbordamiento en TODOS los dispositivos */
+    section, header, footer, div {
+      max-width: 100%;
+    }
+
+    section {
+      overflow-x: hidden;
+    }
+
+    p, h1, h2, h3, h4, li, span {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    @media (max-width: 600px) {
+
+      /* --- Variables móvil --- */
+      :root {
+        --section-pad: 3.5rem;
+        --container: min(1180px, 88vw);
+      }
+
+      /* --- Header --- */
+      .logo-main { font-size: 1.2rem; }
+      .logo-sub  { font-size: .55rem; }
+      .logo-icon { width: 38px !important; height: 38px !important; }
+
+      /* --- Hero: quitar logo duplicado en móvil --- */
+      .hero-logo { display: none; }
+
+      .hero-title {
+        font-size: clamp(3.8rem, 18vw, 5.5rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-scroll { display: none; }
+
+      /* --- Secciones generales: evitar desbordamiento --- */
+      .container { width: 92vw; }
+
+      .section-title {
+        font-size: clamp(2rem, 9vw, 3rem);
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+
+      /* --- Nosotros --- */
+      #nosotros { overflow: hidden; }
+      .nosotros-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2rem;
+        overflow: hidden;
+      }
+      .nosotros-text { 
+        max-width: 100%; 
+        padding: 0;
+        overflow: hidden;
+      }
+      .nosotros-body { 
+        font-family: var(--font-sans);
+        font-style: normal;
+        font-size: .88rem; 
+        line-height: 1.7;
+        overflow: hidden;
+      }
+      .nosotros-body p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+      }
+      .nosotros-stats { 
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .stat-num { font-size: 2rem; }
+      .nosotros-images { 
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+      }
+      .img-tall { grid-row: span 1; aspect-ratio: 1; }
+
+      /* --- Parrilla features --- */
+      .parrilla-features { grid-template-columns: 1fr; }
+
+      /* --- Especialidades --- */
+      .platos-grid { grid-template-columns: 1fr; }
+      .plato-card:first-child { grid-column: span 1; }
+      .plato-img { height: 260px; }
+      .plato-card:first-child .plato-img { height: 280px; }
+      .plato-desc { max-height: 60px !important; }
+
+      /* --- Menú del día --- */
+      .menu-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .menu-services { grid-template-columns: 1fr; gap: .7rem; }
+      .service-pill { padding: .9rem 1rem; }
+
+      /* --- Reseñas --- */
+      .reviews-grid { grid-template-columns: 1fr; }
+      .rating-big { font-size: 5rem; }
+
+      /* --- Reservas --- */
+      .reservas-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .tel-link { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+      .horarios-card { padding: 1.5rem; }
+
+      /* --- Ubicación --- */
+      .ubicacion-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .map-wrap iframe { height: 240px; }
+
+      /* --- Carta completa tabs --- */
+      .carta-tabs { gap: 0; border-bottom: 1px solid rgba(180,147,90,.2); }
+      .carta-tab { 
+        padding: .7rem .9rem; 
+        font-size: .62rem; 
+        flex: 1;
+        text-align: center;
+      }
+      .carta-grid { grid-template-columns: 1fr; }
+      .carta-item--featured { 
+        grid-column: span 1;
+        flex-direction: column;
+      }
+      .carta-item--featured .carta-item-img { 
+        width: 100%; 
+        height: 200px; 
+      }
+      .carta-item { padding: 1rem; }
+
+      /* --- Chimenea wow --- */
+      .wow-chimenea { height: clamp(280px, 55vw, 380px); }
+      .wow-quote { font-size: clamp(2rem, 9vw, 3.5rem); }
+      .wow-chimenea-overlay { padding-left: 1.5rem; }
+
+      /* --- Comedores --- */
+      .wow-comedores {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .wow-comedor-main { height: 320px; }
+      .wow-comedor-side {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        height: 240px;
+      }
+      .wow-comedor-caption {
+        padding: 1rem;
+        transform: translateY(0) !important;
+        background: linear-gradient(to top, rgba(15,11,9,.95) 0%, rgba(15,11,9,.4) 100%);
+      }
+      .wow-comedor-caption .section-label {
+        font-size: .58rem;
+        letter-spacing: .2em;
+      }
+      .wow-comedor-caption p {
+        display: none;
+      }
+      .wow-comedor-main .wow-comedor-caption p {
+        display: block;
+        font-size: .8rem;
+      }
+
+      /* --- Footer --- */
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .footer-tagline { font-size: .9rem; }
+      .footer-copy { font-size: .65rem; }
+
+      /* --- Botón flotante --- */
+      .floating-cta {
+        bottom: 1rem;
+        right: 1rem;
+        padding: .75rem 1.2rem;
+        font-size: .65rem;
+      }
+
+      /* --- Avisos y notices --- */
+      .reservas-notice { flex-direction: column; gap: .8rem; }
+      .notice-icon { width: 32px; height: 32px; }
+
+      /* --- Contacto ubicación --- */
+      .contact-list li { gap: .7rem; }
+      .contact-icon { width: 32px; height: 32px; }
+
+      /* --- Botones de ubicación en columna --- */
+      #ubicacion .btn { 
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-right: 0 !important;
+        margin-top: 1rem !important;
+      }
+    }
+
+    /* Tablet intermedio */
+    @media (min-width: 601px) and (max-width: 860px) {
+      .hero-logo { width: 70px; height: 70px; }
+      .hero-title { font-size: clamp(4rem, 13vw, 6rem); }
+      .nosotros-grid { grid-template-columns: 1fr; }
+      .carta-grid { grid-template-columns: 1fr 1fr; }
+      .carta-item--featured { grid-column: span 2; }
+      .reservas-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .ubicacion-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header id="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="#" class="logo-wrap" aria-label="O Ferro Parrilla — Inicio">
+      <div class="logo-icon" aria-hidden="true" style="background:#000;overflow:hidden;padding:0;">
+        <img src="logo.jpg" alt="Logo O Ferro Parrilla" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">O FERRO</span>
+        <span class="logo-sub">Parrilla · Verín</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#nosotros">El Restaurante</a>
+      <a href="#especialidades">Destacados</a>
+      <a href="#carta">Carta</a>
+      <a href="#menu-dia">Menú</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="tel:+34988098954" class="btn nav-cta">
+        <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:#fff;fill:none;stroke-width:2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        Reservar
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-menu" aria-label="Navegación móvil">
+    <a href="#nosotros">El Restaurante</a>
+    <a href="#especialidades">Destacados</a>
+    <a href="#carta">Carta completa</a>
+    <a href="#menu-dia">Menú del Día</a>
+    <a href="#resenas">Reseñas</a>
+    <a href="#reservas">Reservas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="tel:+34988098954" style="color:var(--gold)">📞 988 09 89 54</a>
+  </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="hero" aria-label="Portada O Ferro Parrilla">
+  <img
+    class="hero-bg"
+    src="chipirones.jpg"
+    alt="Chipirones a la plancha en O Ferro Parrilla, Verín"
+    width="1920" height="1080"
+    loading="eager"
+  />
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="hero-tag">Verín · Ourense · Galicia</span>
+    </div>
+    <div class="hero-logo" aria-hidden="true">
+      <img src="logo.jpg" alt="Logo O Ferro Parrilla" />
+    </div>
+    <h1 class="hero-title">O<br>FE<em>RRO</em></h1>
+    <p class="hero-subtitle">Onde o lume fai a tradición. Carnes a la brasa, producto gallego de primera y el calor de siempre.</p>
+    <div class="hero-actions">
+      <a href="tel:+34988098954" class="btn btn-fire">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;flex-shrink:0"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+        Llamar y reservar
+      </a>
+      <a href="#especialidades" class="btn btn-ghost">Ver la carta</a>
+    </div>
+  </div>
+
+  <div class="hero-rating" aria-label="Valoración del restaurante">
+    <div class="rating-number">4,6</div>
+    <div class="rating-stars" aria-hidden="true">★★★★★</div>
+    <div class="rating-count">132 reseñas · Google</div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Descubrir</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ========== NOSOTROS ========== -->
+<section id="nosotros" aria-labelledby="nosotros-title">
+  <div class="container">
+    <div class="nosotros-grid">
+      <div class="nosotros-text reveal">
+        <span class="section-label">Nuestra historia</span>
+        <h2 class="section-title" id="nosotros-title">Tradición que<br>se huele antes de llegar</h2>
+        <div class="divider"></div>
+        <div class="nosotros-body">
+          <p>En el corazón de Verín, donde la Ruta de la Plata cruza la tierra de vinos de Monterrei, lleva años ardiendo una brasa que no se apaga. O Ferro nació del respeto por el producto gallego: carnes de primera, pescados frescos y el secreto de saber cuándo avivar el fuego.</p>
+          <p>Aquí no hay prisa ni artificios. Cada corte descansa el tiempo justo antes de encontrarse con el hierro caliente. El resultado lo conocen quienes repiten temporada tras temporada: 4,6 estrellas en Google que saben a humo y honestidad.</p>
+          <p>Te esperamos con copa fría y el mejor chuleto de vaca que hayas probado en la provincia de Ourense.</p>
+        </div>
+        <div class="nosotros-stats">
+          <div class="stat-item">
+            <div class="stat-num">4,6</div>
+            <div class="stat-label">Valoración media</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">★★★★★</div>
+            <div class="stat-label">Google Maps</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Producto gallego</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nosotros-images reveal reveal-delay-2">
+        <div class="img-tall">
+          <img src="tabla_quesos_grande.jpg" alt="Tabla de quesos gallegos caramelizados en O Ferro, Verín" loading="lazy" />
+        </div>
+        <div class="img-square">
+          <img src="surtido_postres.jpg" alt="Surtido de postres caseros en O Ferro Parrilla" loading="lazy" />
+        </div>
+        <div class="img-square">
+          <img src="huevos_cabreados.jpg" alt="Huevos cabreados con chorizo y patatas en O Ferro" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PARRILLA ========== -->
+<section id="parrilla" aria-labelledby="parrilla-title">
+  <div class="container">
+    <div class="parrilla-header reveal">
+      <span class="section-label">Nuestra filosofía</span>
+      <h2 class="section-title" id="parrilla-title">La parrilla lo es todo</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle" style="margin-inline:auto;text-align:center;">
+        El hierro, el fuego y la paciencia. Tres ingredientes que no se compran, se aprenden.
+      </p>
+    </div>
+
+    <div class="parrilla-features reveal reveal-delay-1">
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-1 2.5-3 4.5-3 7a3 3 0 0 0 6 0c0-2.5-2-4.5-3-7z"/><path d="M8 21V15M16 21V15M5 15h14"/></svg>
+        </div>
+        <h3 class="feature-title">Brasa auténtica</h3>
+        <p class="feature-text">Trabajamos exclusivamente con brasa viva de carbón. Sin trucos. El calor directo sella los jugos en el interior y crea esa costra que solo el hierro verdadero sabe hacer.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </div>
+        <h3 class="feature-title">Producto de Galicia</h3>
+        <p class="feature-text">Carnes de vaca galega con denominación de origen, chipirones de las rías, quesos nacionales de selección. La cadena corta no es moda aquí: es vocación.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </div>
+        <h3 class="feature-title">Trato de casa</h3>
+        <p class="feature-text">Ambiente elegante pero sin distancias. En O Ferro se viene a disfrutar, a compartir y a repetir. Por eso los clientes repiten y nos recomiendan a quien quiere vivir una buena mesa en Verín.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ESPECIALIDADES (HERO HIGHLIGHTS) ========== -->
+<section id="especialidades" aria-labelledby="especialidades-title">
+  <div class="container">
+    <div class="especialidades-header">
+      <div class="reveal">
+        <span class="section-label">Destacados de la casa</span>
+        <h2 class="section-title" id="especialidades-title">Lo que más<br>se recuerda</h2>
+        <div class="divider"></div>
+      </div>
+      <p class="section-subtitle reveal reveal-delay-1">
+        Platos que han convertido O Ferro en una referencia de la parrilla en Verín y Ourense.
+      </p>
+    </div>
+
+    <div class="platos-grid">
+      <div class="plato-card reveal">
+        <img class="plato-img" src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada a la brasa en O Ferro Verín" loading="lazy" />
+        <div class="plato-overlay">
+          <span class="plato-cat">Brasa · Estrella de la casa</span>
+          <h3 class="plato-name">Chuletón de Vaca Madurada</h3>
+          <p class="plato-desc">+30 días de maduración, sellado en brasa viva. Con pimientos de Padrón y patatas chips artesanas.</p>
+        </div>
+      </div>
+      <div class="plato-card reveal reveal-delay-1">
+        <img class="plato-img" src="pulpo_a_la_brasa.png" alt="Pulpo a la brasa con cachelos en O Ferro Parrilla" loading="lazy" />
+        <div class="plato-overlay">
+          <span class="plato-cat">Mar · Galicia</span>
+          <h3 class="plato-name">Pulpo a la Brasa</h3>
+          <p class="plato-desc">Tentáculos de pulpo gallego marcados a la brasa sobre cachelos, pimentón de la Vera y aceite de oliva.</p>
+        </div>
+      </div>
+      <div class="plato-card reveal">
+        <img class="plato-img" src="vieiras.png" alt="Vieiras con tartar de salmón y aguacate en O Ferro" loading="lazy" />
+        <div class="plato-overlay">
+          <span class="plato-cat">Mar · Temporada</span>
+          <h3 class="plato-name">Vieiras</h3>
+          <p class="plato-desc">Vieira sobre tartar de salmón y crema de aguacate. Un bocado de mar y elegancia.</p>
+        </div>
+      </div>
+      <div class="plato-card reveal reveal-delay-1">
+        <img class="plato-img" src="morcilla.png" alt="Morcilla de Burgos a la plancha en O Ferro Parrilla Verín" loading="lazy" />
+        <div class="plato-overlay">
+          <span class="plato-cat">Entrantes · Tradición</span>
+          <h3 class="plato-name">Morcilla de Burgos</h3>
+          <p class="plato-desc">Rodajas de morcilla de Burgos a la plancha, crujientes por fuera y fundentes por dentro.</p>
+        </div>
+      </div>
+      <div class="plato-card reveal reveal-delay-2">
+        <img class="plato-img" src="tarta_de_queso.png" alt="Tarta de queso casera con higos en O Ferro Verín" loading="lazy" />
+        <div class="plato-overlay">
+          <span class="plato-cat">Postres · Caseros</span>
+          <h3 class="plato-name">Tarta de Queso Casera</h3>
+          <p class="plato-desc">Tarta horneada al momento, cremosa en el centro, con mermelada de higo artesana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WOW: CHIMENEA FULLWIDTH ========== -->
+<div class="wow-chimenea" aria-hidden="true">
+  <img src="chimenea.png" alt="La brasa de O Ferro Parrilla, Verín" loading="lazy" />
+  <div class="wow-chimenea-overlay">
+    <div class="wow-chimenea-text reveal">
+      <span class="section-label" style="color:var(--gold-lt)">El corazón de O Ferro</span>
+      <p class="wow-quote">Aquí empieza<br>todo lo que<br>comes después</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CARTA COMPLETA ========== -->
+<section id="carta" aria-labelledby="carta-title">
+  <div class="container">
+    <div class="carta-header reveal">
+      <span class="section-label">Carta completa</span>
+      <h2 class="section-title" id="carta-title">Todo lo que<br>ofrece nuestra cocina</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Producto de temporada, elaboración honesta y el punto de brasa que nos define.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="carta-tabs reveal reveal-delay-1" role="tablist" aria-label="Categorías de la carta">
+      <button class="carta-tab active" role="tab" aria-selected="true" data-cat="entrantes">Entrantes</button>
+      <button class="carta-tab" role="tab" aria-selected="false" data-cat="carnes">Carnes a la Brasa</button>
+      <button class="carta-tab" role="tab" aria-selected="false" data-cat="pescados">Pescados</button>
+      <button class="carta-tab" role="tab" aria-selected="false" data-cat="postres">Postres</button>
+    </div>
+
+    <!-- ENTRANTES -->
+    <div class="carta-panel active" id="panel-entrantes" role="tabpanel">
+      <div class="carta-grid">
+
+        <div class="carta-item reveal" data-img="chipirones.jpg" data-desc="Chipirones frescos cocinados a la plancha con aceite de hierbas.">
+          <div class="carta-item-img"><img src="chipirones.jpg" alt="Chipirones a la plancha" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Chipirones a la plancha</h3>
+            <p class="carta-item-desc">Frescos, marcados a la plancha con aceite de hierbas.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1" data-img="morcilla.png">
+          <div class="carta-item-img"><img src="morcilla.png" alt="Morcilla de Burgos" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Morcilla de Burgos</h3>
+            <p class="carta-item-desc">A la plancha, crujiente por fuera y fundente por dentro.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🦪</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Zamburiñas</h3>
+            <p class="carta-item-desc">Frescas a la plancha, sabor puro de las rías gallegas.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img"><img src="tabla_quesos_grande.jpg" alt="Tabla de quesos" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Tabla de Quesos</h3>
+            <p class="carta-item-desc">Selección nacional en tabla grande o pequeña.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img"><img src="huevos_cabreados.jpg" alt="Huevos cabreados" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Huevos Cabreados con chistorra</h3>
+            <p class="carta-item-desc">Patatas chips de la casa, huevos de corral y chistorra artesana.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🍳</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Revuelto de huevos con champiñones</h3>
+            <p class="carta-item-desc">Huevos revueltos con champiñones frescos de temporada.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🌿</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Parrillada de verduras a la Brasa</h3>
+            <p class="carta-item-desc">Verduras de temporada cocinadas directamente a la brasa.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🌶️</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Pimientos del Padrón</h3>
+            <p class="carta-item-desc">Unos pican y otros no. El clásico gallego de siempre.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🦐</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Gambones a la plancha</h3>
+            <p class="carta-item-desc">Gambones frescos cocinados a la plancha con sal gruesa.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🐚</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Almejas en Salsa Verde</h3>
+            <p class="carta-item-desc">Almejas frescas en salsa verde, para mojar sin parar.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🥗</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Ensalada de tomate, cebolla, atún</h3>
+            <p class="carta-item-desc">Fresca, sencilla y llena de sabor.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🍖</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Lacón a Feira</h3>
+            <p class="carta-item-desc">Lacón cocido y aderezado al estilo gallego de toda la vida.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🥢</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Oreja a Feira</h3>
+            <p class="carta-item-desc">Oreja de cerdo al estilo gallego, suave y bien aliñada.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🥦</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Espárragos Trigueros a la Brasa</h3>
+            <p class="carta-item-desc">Espárragos trigueros marcados a la brasa con aceite y sal.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🍄</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Champiñones a la Brasa</h3>
+            <p class="carta-item-desc">Champiñones frescos con ajo y perejil, a la brasa.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🥓</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Espárragos con Jamón</h3>
+            <p class="carta-item-desc">Espárragos frescos envueltos en jamón serrano.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🍞</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Tostas de Asados</h3>
+            <p class="carta-item-desc">Pan crujiente con asados variados de la propia parrilla.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARNES -->
+    <div class="carta-panel" id="panel-carnes" role="tabpanel" hidden>
+      <div class="carta-grid">
+
+        <div class="carta-item carta-item--featured reveal">
+          <div class="carta-item-img"><img src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <span class="carta-badge">Estrella de la casa</span>
+            <h3 class="carta-item-name">Chuletón vaca vieja madurada +30 días</h3>
+            <p class="carta-item-desc">El rey de la brasa. Maduración prolongada para una jugosidad y sabor excepcionales.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🥩</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Chuletón de Ternera del País 1 kg</h3>
+            <p class="carta-item-desc">Ternera gallega de primera, cocinada a la brasa en su punto.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🔥</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Entrecot de vaca a la Brasa</h3>
+            <p class="carta-item-desc">Corte noble de vaca, sellado a alta temperatura para concentrar el sabor.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🍗</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Churrascada</h3>
+            <p class="carta-item-desc">Ternera, cerdo, panceta y criollo. La opción perfecta para compartir.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🐑</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Chuletillas de Cordero a la Brasa</h3>
+            <p class="carta-item-desc">Chuletillas tiernas, con ese sabor particular del cordero bien brasado.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🐖</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Secreto a la Brasa</h3>
+            <p class="carta-item-desc">Pieza premium de cerdo, jugosa e intensa. Una de las favoritas.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🌿</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Falda de Ternera a la Brasa</h3>
+            <p class="carta-item-desc">Corte sabroso y jugoso, ideal para quienes buscan sabor puro.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🍖</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Churrasco de Cerdo a la Brasa</h3>
+            <p class="carta-item-desc">Clásico de la parrilla, cocinado lentamente para que quede en su punto.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🐓</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Pollo a la Brasa</h3>
+            <p class="carta-item-desc">Pollo entero a la brasa, dorado por fuera y jugoso por dentro.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🥩</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Solomillo de Cerdo Encebollado</h3>
+            <p class="carta-item-desc">Solomillo tierno con cebolla caramelizada, suave y sabroso.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🕊️</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Picantón a la Brasa</h3>
+            <p class="carta-item-desc">Pollito de pequeño formato, entero a la brasa. Sabor concentrado.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🪶</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Codorniz a la Brasa</h3>
+            <p class="carta-item-desc">Delicada y aromática, cocinada en brasa a temperatura precisa.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PESCADOS -->
+    <div class="carta-panel" id="panel-pescados" role="tabpanel" hidden>
+      <div class="carta-grid">
+
+        <div class="carta-item carta-item--featured reveal">
+          <div class="carta-item-img"><img src="pulpo_a_la_brasa.png" alt="Pulpo a la brasa" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <span class="carta-badge">Favorito</span>
+            <h3 class="carta-item-name">Pulpo a la Brasa</h3>
+            <p class="carta-item-desc">Tentáculos de pulpo gallego sobre cachelos con pimentón de la Vera y aceite de oliva.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img"><img src="vieiras.png" alt="Vieiras" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Vieiras</h3>
+            <p class="carta-item-desc">Sobre tartar de salmón y crema de aguacate. Elegante y delicado.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img"><img src="chipirones.jpg" alt="Chipirones" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Chipirones a la plancha</h3>
+            <p class="carta-item-desc">Chipirones de las rías, marcados en plancha caliente con aceite de hierbas.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🐟</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Lubina Salvaje</h3>
+            <p class="carta-item-desc">Lubina salvaje a la brasa. Sabor limpio de mar sin artificios.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🐠</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Dorada a la Brasa</h3>
+            <p class="carta-item-desc">Dorada fresca, cocinada al punto con aceite y limón.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🐡</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Merluza a la Gallega</h3>
+            <p class="carta-item-desc">Merluza fresca al estilo gallego clásico, con patata y pimentón.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🌊</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Merluza en Salsa Verde</h3>
+            <p class="carta-item-desc">Merluza en salsa verde con almejas. Un clásico que nunca decepciona.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🦑</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Sepia a la plancha</h3>
+            <p class="carta-item-desc">Sepia fresca en su punto, con un toque de ajo y perejil.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🐟</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Bacalao a la portuguesa</h3>
+            <p class="carta-item-desc">Bacalao preparado al estilo portugués, con la tradición de frontera que nos caracteriza.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- POSTRES -->
+    <div class="carta-panel" id="panel-postres" role="tabpanel" hidden>
+      <div class="carta-grid">
+
+        <div class="carta-item carta-item--featured reveal">
+          <div class="carta-item-img"><img src="tarta_de_queso.png" alt="Tarta de queso casera" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <span class="carta-badge">Casero</span>
+            <h3 class="carta-item-name">Tarta de Queso Casera</h3>
+            <p class="carta-item-desc">Cremosa, tostada por arriba y suave en el centro. Con mermelada de higo artesana.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img"><img src="surtido_postres.jpg" alt="Surtido de postres caseros" loading="lazy"/></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Surtido de postres caseros</h3>
+            <p class="carta-item-desc">Flan, panacota, filloa y pudín para compartir y degustar.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🍮</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Flan de Huevo Casero</h3>
+            <p class="carta-item-desc">El flan de siempre, con caramelo oscuro hecho en casa.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🥞</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Filloas rellenas de nata</h3>
+            <p class="carta-item-desc">Filloas gallegas con nata montada y sirope de chocolate, fresa o caramelo.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🍶</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Panacota casera</h3>
+            <p class="carta-item-desc">Panacota cremosa con mermelada de frutos rojos.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-2">
+          <div class="carta-item-img carta-item-noimg"><span>🍯</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Natillas caseras</h3>
+            <p class="carta-item-desc">Natillas tradicionales, suaves y con su toque de canela.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🍮</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Pudín</h3>
+            <p class="carta-item-desc">Pudín casero con caramelo, jugoso y contundente.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🍍</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Fruta en almíbar · Macedonia</h3>
+            <p class="carta-item-desc">Piña, melocotón en almíbar o macedonia de frutas frescas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== WOW: COMEDORES ========== -->
+<div class="wow-comedores" aria-label="Ambiente y comedores de O Ferro Parrilla">
+  <div class="wow-comedor-item wow-comedor-main">
+    <img src="comedor_principal.jpeg" alt="Comedor principal de O Ferro Parrilla en Verín" loading="lazy" />
+    <div class="wow-comedor-caption">
+      <span class="section-label">El salón principal</span>
+      <p>Mesas preparadas, luz cálida y el olor de la brasa al fondo.</p>
+    </div>
+  </div>
+  <div class="wow-comedor-side">
+    <div class="wow-comedor-item">
+      <img src="comedor_abajo.png" alt="Salón de planta baja de O Ferro Parrilla" loading="lazy" />
+      <div class="wow-comedor-caption">
+        <span class="section-label">Salón planta baja</span>
+        <p>Ambiente íntimo y acogedor para disfrutar en compañía.</p>
+      </div>
+    </div>
+    <div class="wow-comedor-item">
+      <img src="comedor_de_arriba.png" alt="Salón de arriba de O Ferro Parrilla para celebraciones" loading="lazy" />
+      <div class="wow-comedor-caption">
+        <span class="section-label">Para ocasiones especiales</span>
+        <p>Salón superior, ideal para celebraciones y grupos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MENU DEL DIA ========== -->
+<section id="menu-dia" aria-labelledby="menu-title">
+  <div class="container">
+    <div class="menu-layout">
+      <div class="menu-card reveal">
+
+        <div class="menu-course">
+          <div class="course-header">Primer plato — ejemplos</div>
+          <ul class="course-items">
+            <li>Pimientos del Padrón</li>
+            <li>Oreja a Feira</li>
+            <li>Revuelto de huevos con champiñones</li>
+            <li>Espárragos trigueros a la brasa</li>
+            <li>Ensalada de tomate, cebolla y atún</li>
+          </ul>
+        </div>
+
+        <div class="menu-course">
+          <div class="course-header">Segundo plato — ejemplos</div>
+          <ul class="course-items">
+            <li>Churrasco de cerdo a la brasa</li>
+            <li>Falda de ternera a la brasa</li>
+            <li>Merluza a la gallega</li>
+            <li>Dorada a la brasa</li>
+            <li>Sepia a la plancha</li>
+          </ul>
+        </div>
+
+        <div class="menu-course">
+          <div class="course-header">Postre</div>
+          <ul class="course-items">
+            <li>Tarta de queso casera</li>
+            <li>Flan de huevo casero</li>
+            <li>Natillas caseras</li>
+          </ul>
+        </div>
+
+        <div class="menu-includes">
+          <p>Menú disponible de <strong style="color:var(--gold-lt)">lunes a viernes al mediodía</strong>. Los fines de semana al mediodía ofrecemos <strong style="color:var(--gold-lt)">menú degustación</strong>. Las noches, exclusivamente carta. Consulta disponibilidad al llamar.</p>
+        </div>
+      </div>
+
+      <div class="menu-info reveal reveal-delay-1">
+        <span class="section-label">Menú del día · Menú Degustación</span>
+        <h2 class="section-title" id="menu-title">Cocina al momento,<br>cada día</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          Cada plato se elabora en el momento en que se pide. Sin precocciones, sin atajos. De lunes a viernes al mediodía, menú del día con producto fresco. Los fines de semana, menú degustación. Las noches, la carta en todo su esplendor.
+        </p>
+        <p class="section-subtitle" style="margin-top:.8rem;font-size:.95rem;">
+          Lo que llega a tu mesa sale de la brasa, no de ninguna nevera. Eso marca la diferencia.
+        </p>
+
+        <div class="menu-services">
+          <div class="service-pill">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>En sala</span>
+          </div>
+          <div class="service-pill">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>L–V al mediodía</span>
+          </div>
+          <div class="service-pill">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Sáb–Dom: degustación</span>
+          </div>
+          <div class="service-pill">
+            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1"/><path d="M2.1 2.3a2 2 0 012-.3h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 10A16 16 0 0014 16.9"/></svg>
+            <span>Reserva por telf.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESENAS ========== -->
+<section id="resenas" aria-labelledby="resenas-title">
+  <div class="container">
+    <div class="resenas-header reveal">
+      <span class="section-label">Lo dicen nuestros clientes</span>
+      <h2 class="section-title" id="resenas-title">Reseñas reales.<br>Una sola palabra: volver.</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="rating-showcase reveal reveal-delay-1">
+      <div class="rating-big" aria-label="Valoración 4,6 sobre 5">4,6</div>
+      <div class="rating-detail">
+        <div class="stars-row" aria-hidden="true">★★★★★</div>
+        <div class="rating-meta">Reseñas verificadas en Google Maps</div>
+        <div style="margin-top:.5rem;font-size:.75rem;color:var(--stone);letter-spacing:.1em;">Mejor restaurante de parrilla en Verín</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="review-text">"El chuletón estaba en su punto perfecto, jugoso por dentro y con esa costra que solo consigue una buena brasa. El servicio, impecable. Repetiremos sin duda."</p>
+        <div class="review-author">María L. · Verín</div>
+        <div class="review-platform">Google Maps</div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="review-text">"De paso por Ourense buscando un sitio para cenar y dimos con O Ferro. No podríamos haber acertado más. Los chipirones a la plancha, exquisitos. El ambiente, muy acogedor."</p>
+        <div class="review-author">Carlos M. · Ourense</div>
+        <div class="review-platform">Google Maps</div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="review-text">"La tabla de quesos gallegos es espectacular. Ambiente tranquilo, trato cercano y precios muy razonables para la calidad que ofrecen. Uno de los mejores de la zona."</p>
+        <div class="review-author">Lucía P. · Santiago de Compostela</div>
+        <div class="review-platform">Google Maps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESERVAS ========== -->
+<section id="reservas" aria-labelledby="reservas-title">
+  <div class="container">
+    <div class="reservas-layout">
+      <div class="reservas-info reveal">
+        <span class="section-label">Haz tu reserva</span>
+        <h2 class="section-title" id="reservas-title">Reserva tu mesa<br>en O Ferro</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          En O Ferro cuidamos cada detalle de tu visita desde el primer momento. Por eso las reservas son personales, directas y exclusivamente por teléfono.
+        </p>
+
+        <div class="tel-display">
+          <p class="tel-label">Llámanos ahora</p>
+          <a href="tel:+34988098954" class="tel-link" aria-label="Llamar al restaurante O Ferro: 988 09 89 54">
+            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+            988 09 89 54
+          </a>
+          <p class="tel-note">Disponible en horario de servicio</p>
+        </div>
+
+        <div class="reservas-notice" role="note" aria-label="Aviso importante sobre reservas">
+          <div class="notice-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="notice-text">
+            <strong>Reservas exclusivamente por teléfono</strong>
+            <p>No aceptamos reservas por correo electrónico, redes sociales ni aplicaciones de terceros. La única forma de asegurar tu mesa es llamando directamente al restaurante.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="horarios-card reveal reveal-delay-1">
+        <h3 class="horarios-title">Horario del restaurante</h3>
+
+        <div class="horario-row">
+          <span class="horario-day">Domingo</span>
+          <span class="horario-time">11:00 – 17:00</span>
+        </div>
+        <div class="horario-row">
+          <span class="horario-day">Lunes</span>
+          <span class="horario-time">11:00 – 16:00</span>
+        </div>
+        <div class="horario-row">
+          <span class="horario-day">Martes</span>
+          <span class="horario-time">11:00 – 17:00</span>
+        </div>
+        <div class="horario-row">
+          <span class="horario-day">Miércoles</span>
+          <span class="horario-time">11:00 – 17:00</span>
+        </div>
+        <div class="horario-row">
+          <span class="horario-day">Jueves</span>
+          <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
+        </div>
+        <div class="horario-row">
+          <span class="horario-day">Viernes</span>
+          <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
+        </div>
+        <div class="horario-row">
+          <span class="horario-day">Sábado</span>
+          <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
+        </div>
+
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(180,147,90,.15);">
+          <p style="font-size:.78rem;color:var(--stone);line-height:1.7;">
+            Los horarios pueden variar en festivos y vacaciones. Llama antes de venir para confirmar disponibilidad.
+          </p>
+        </div>
+
+        <a href="tel:+34988098954" class="btn btn-fire" style="margin-top:1.5rem;width:100%;justify-content:center;">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;flex-shrink:0"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+          988 09 89 54 — Reservar ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== UBICACION ========== -->
+<section id="ubicacion" aria-labelledby="ubicacion-title">
+  <div class="container">
+    <div class="ubicacion-grid">
+      <div class="ubicacion-info reveal">
+        <span class="section-label">Encuéntranos</span>
+        <h2 class="section-title" id="ubicacion-title">Dónde estamos</h2>
+        <div class="divider"></div>
+
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Dirección</strong>
+              <span>Av. de Castilla, 49 · 32627 Verín, Ourense</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Teléfono (reservas)</strong>
+              <a href="tel:+34988098954">988 09 89 54</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Horario de servicio</strong>
+              <span>Dom–Mié: 11–17h · Jue–Sáb: 11–17h y 19:30–23h</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Servicios</strong>
+              <span>Comer en sala · Sin reparto a domicilio</span>
+            </div>
+          </li>
+        </ul>
+
+        <a
+          href="https://maps.app.goo.gl/cNvkHTzqgiZGTLTEA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost"
+          style="margin-top:2rem;margin-right:.75rem;"
+          aria-label="Abrir O Ferro en Google Maps (abre en nueva pestaña)"
+        >
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cómo llegar
+        </a>
+        <a
+          href="https://www.instagram.com/oferro_"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost"
+          style="margin-top:2rem;"
+          aria-label="Seguir a O Ferro en Instagram (abre en nueva pestaña)"
+        >
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @oferro_
+        </a>
+      </div>
+
+      <div class="map-wrap reveal reveal-delay-1">
+        <iframe
+          src="https://maps.google.com/maps?q=O+Ferro+Parrilla+Av+de+Castilla+49+Verin+Ourense&output=embed"
+          loading="lazy"
+          title="Mapa de localización de O Ferro Parrilla en Verín, Ourense"
+          referrerpolicy="no-referrer-when-downgrade"
+          aria-label="Google Maps — O Ferro Parrilla, Av. de Castilla 49, Verín"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer role="contentinfo">
+  <div class="container footer-inner">
+    <div class="footer-logo-wrap">
+      <img src="logo.jpg" alt="Logo O Ferro Parrilla" class="footer-logo-img" />
+      <div class="footer-logo">
+        O FERRO
+        <small>Parrilla · Verín · Ourense</small>
+      </div>
+    </div>
+    <div class="footer-tagline">Onde o lume fai a tradición</div>
+    <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;">
+      <a href="https://www.instagram.com/oferro_" target="_blank" rel="noopener noreferrer" aria-label="Instagram de O Ferro" style="display:flex;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.8;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.8">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @oferro_
+      </a>
+      <p class="footer-copy">© 2025 O Ferro Parrilla · Av. de Castilla, 49, Verín · <a href="tel:+34988098954" style="color:var(--gold)">988 09 89 54</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== FLOATING CTA ========== -->
+<a href="tel:+34988098954" class="floating-cta" aria-label="Llamar para reservar mesa en O Ferro Parrilla">
+  <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+  Reservar mesa
+</a>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+    hamburger.querySelectorAll('span')[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    hamburger.querySelectorAll('span')[1].style.opacity = open ? '0' : '';
+    hamburger.querySelectorAll('span')[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    });
+  });
+
+  // Carta tabs
+  document.querySelectorAll('.carta-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const cat = tab.dataset.cat;
+      document.querySelectorAll('.carta-tab').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.carta-panel').forEach(p => {
+        p.classList.remove('active');
+        p.hidden = true;
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('panel-' + cat);
+      panel.classList.add('active');
+      panel.hidden = false;
+      // Re-trigger reveals for new panel
+      panel.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+    });
+  });
+
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

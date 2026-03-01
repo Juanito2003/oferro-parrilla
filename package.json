@@ -1,0 +1,10 @@
+{
+  "name": "oferro-parrilla",
+  "version": "1.0.0",
+  "description": "Web de O Ferro Parrilla — Verín, Ourense",
+  "scripts": {
+    "start": "npx serve . --listen 3000",
+    "dev": "npx browser-sync start --server --files '*.html, *.css, *.js, *.jpg, *.png' --port 3000"
+  },
+  "keywords": ["restaurante", "parrilla", "verin", "ourense"]
+}
