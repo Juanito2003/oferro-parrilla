@@ -1436,33 +1436,24 @@
     /* ===================== WOW: COMEDORES ===================== */
     .wow-comedores {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      height: clamp(520px, 70vw, 880px);
+      grid-template-columns: 1fr 1fr;
+      gap: .4rem;
       position: relative;
       z-index: 1;
       isolation: isolate;
     }
 
-    .wow-comedor-main {
-      height: 100%;
-    }
-
-    .wow-comedor-side {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      height: 100%;
-    }
-
     .wow-comedor-item {
       position: relative;
       overflow: hidden;
-      min-height: 260px;
+      aspect-ratio: 3/4;
     }
 
     .wow-comedor-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       transition: transform .7s ease;
       filter: brightness(.82);
     }
@@ -1494,10 +1485,8 @@
     @media (max-width: 720px) {
       .wow-comedores {
         grid-template-columns: 1fr;
-        height: auto;
       }
-      .wow-comedor-main { height: 320px; }
-      .wow-comedor-side { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: 240px; }
+      .wow-comedor-item { aspect-ratio: 4/5; }
     }
 
     /* ===================== CARTA COMPLETA ===================== */
@@ -1844,14 +1833,8 @@
       /* --- Comedores --- */
       .wow-comedores {
         grid-template-columns: 1fr;
-        height: auto;
       }
-      .wow-comedor-main { height: 320px; }
-      .wow-comedor-side {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        height: 240px;
-      }
+      .wow-comedor-item { aspect-ratio: 4/5; }
       .wow-comedor-caption {
         padding: 1rem;
         transform: translateY(0) !important;
@@ -1862,9 +1845,6 @@
         letter-spacing: .2em;
       }
       .wow-comedor-caption p {
-        display: none;
-      }
-      .wow-comedor-main .wow-comedor-caption p {
         display: block;
         font-size: .8rem;
       }
@@ -2033,9 +2013,6 @@
       </div>
 
       <div class="nosotros-images reveal reveal-delay-2">
-        <div class="img-tall">
-          <img src="tabla_quesos_grande.jpg" alt="Tabla de quesos gallegos caramelizados en O Ferro, Verín" loading="lazy" />
-        </div>
         <div class="img-square">
           <img src="surtido_postres.jpg" alt="Surtido de postres caseros en O Ferro Parrilla" loading="lazy" />
         </div>
@@ -2106,14 +2083,6 @@
           <span class="plato-cat">Brasa · Estrella de la casa</span>
           <h3 class="plato-name">Chuletón de Vaca Madurada</h3>
           <p class="plato-desc">+30 días de maduración, sellado en brasa viva. Con pimientos de Padrón y patatas chips artesanas.</p>
-        </div>
-      </div>
-      <div class="plato-card reveal">
-        <img class="plato-img" src="vieiras.jpg" alt="Vieiras con tartar de salmón y aguacate en O Ferro" loading="lazy" />
-        <div class="plato-overlay">
-          <span class="plato-cat">Mar · Temporada</span>
-          <h3 class="plato-name">Vieiras</h3>
-          <p class="plato-desc">Vieira sobre tartar de tomate y crema de aguacate. Un bocado de mar y elegancia.</p>
         </div>
       </div>
       <div class="plato-card reveal reveal-delay-1">
@@ -2204,16 +2173,8 @@
         <div class="carta-item reveal reveal-delay-2">
           <div class="carta-item-img carta-item-noimg"><span>🦪</span></div>
           <div class="carta-item-info">
-            <h3 class="carta-item-name">Zamburiñas</h3>
-            <p class="carta-item-desc">Frescas a la plancha, sabor puro de las rías gallegas.</p>
-          </div>
-        </div>
-
-        <div class="carta-item reveal">
-          <div class="carta-item-img"><img src="tabla_quesos_grande.jpg" alt="Tabla de quesos" loading="lazy"/></div>
-          <div class="carta-item-info">
-            <h3 class="carta-item-name">Tabla de Quesos</h3>
-            <p class="carta-item-desc">Selección nacional en tabla grande o pequeña.</p>
+            <h3 class="carta-item-name">Vieiras del Pacífico</h3>
+            <p class="carta-item-desc">Frescas a la plancha, con la dulzura y textura características de la vieira del Pacífico.</p>
           </div>
         </div>
 
@@ -2425,14 +2386,6 @@
     <div class="carta-panel" id="panel-pescados" role="tabpanel" hidden>
       <div class="carta-grid">
 
-        <div class="carta-item carta-item--featured reveal">
-          <div class="carta-item-img"><img src="vieiras.jpg" alt="Vieiras" loading="lazy"/></div>
-          <div class="carta-item-info">
-            <h3 class="carta-item-name">Vieiras</h3>
-            <p class="carta-item-desc">Sobre tartar de salmón y crema de aguacate. Elegante y delicado.</p>
-          </div>
-        </div>
-
         <div class="carta-item reveal reveal-delay-2">
           <div class="carta-item-img"><img src="chipirones.jpg" alt="Chipirones" loading="lazy"/></div>
           <div class="carta-item-info">
@@ -2489,6 +2442,14 @@
           </div>
         </div>
 
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🥫</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Bacalao a la lata</h3>
+            <p class="carta-item-desc">Bacalao confitado a baja temperatura, servido en su lata con aceite de oliva virgen y ajo dorado.</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -2537,6 +2498,22 @@
           </div>
         </div>
 
+        <div class="carta-item reveal">
+          <div class="carta-item-img carta-item-noimg"><span>🍊</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Filloas a la Grand Marnier</h3>
+            <p class="carta-item-desc">Filloas flambeadas con Grand Marnier, con el toque cítrico y dulce del licor de naranja.</p>
+          </div>
+        </div>
+
+        <div class="carta-item reveal reveal-delay-1">
+          <div class="carta-item-img carta-item-noimg"><span>🍰</span></div>
+          <div class="carta-item-info">
+            <h3 class="carta-item-name">Tarta de la abuela</h3>
+            <p class="carta-item-desc">Receta de siempre a base de galleta y chocolate, tal y como la hacía la abuela.</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -2545,14 +2522,6 @@
 
 <!-- ========== WOW: COMEDORES ========== -->
 <div class="wow-comedores" aria-label="Ambiente y comedores de O Ferro Parrilla">
-  <div class="wow-comedor-item wow-comedor-main">
-    <img src="comedor_principal.jpeg" alt="Comedor principal de O Ferro Parrilla en Verín" loading="lazy" />
-    <div class="wow-comedor-caption">
-      <span class="section-label">El salón principal</span>
-      <p>Mesas preparadas, luz cálida y el olor de la brasa al fondo.</p>
-    </div>
-  </div>
-  <div class="wow-comedor-side">
     <div class="wow-comedor-item">
       <img src="comedor_abajo.jpg" alt="Salón de planta baja de O Ferro Parrilla" loading="lazy" />
       <div class="wow-comedor-caption">
@@ -2567,7 +2536,6 @@
         <p>Salón superior, ideal para celebraciones y grupos.</p>
       </div>
     </div>
-  </div>
 </div>
 
 <!-- ========== MENU DEL DIA ========== -->
@@ -2726,17 +2694,17 @@
           <span class="horario-day">Domingo</span>
           <span class="horario-time">11:00 – 17:00</span>
         </div>
-        <div class="horario-row">
+        <div class="horario-row closed">
           <span class="horario-day">Lunes</span>
-          <span class="horario-time">11:00 – 16:00</span>
+          <span class="horario-time">Cerrado</span>
         </div>
         <div class="horario-row">
           <span class="horario-day">Martes</span>
-          <span class="horario-time">11:00 – 17:00</span>
+          <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
         </div>
         <div class="horario-row">
           <span class="horario-day">Miércoles</span>
-          <span class="horario-time">11:00 – 17:00</span>
+          <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
         </div>
         <div class="horario-row">
           <span class="horario-day">Jueves</span>
