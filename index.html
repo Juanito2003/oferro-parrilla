@@ -50,7 +50,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.6",
-      "reviewCount": "132"
+      "reviewCount": "297"
     },
     "servesCuisine": ["Galician", "Grilled meats"],
     "priceRange": "€€",
@@ -1031,6 +1031,21 @@
       letter-spacing: .15em;
     }
 
+    a.review-platform { display: inline-block; margin-top: .3rem; text-decoration: none; }
+    a.review-platform:hover { text-decoration: underline; }
+
+    .reviews-footer {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .reviews-disclaimer {
+      margin-top: 1.2rem;
+      font-size: .72rem;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+
     @media (max-width: 860px) {
       .reviews-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -1972,9 +1987,9 @@
   </div>
 
   <div class="hero-rating" aria-label="Valoración del restaurante">
-    <div class="rating-number">4,6</div>
+    <div class="rating-number" data-g-rating>4,6</div>
     <div class="rating-stars" aria-hidden="true">★★★★★</div>
-    <div class="rating-count">132 reseñas · Google</div>
+    <div class="rating-count"><span data-g-count>297</span> reseñas · Google</div>
   </div>
 
   <div class="hero-scroll" aria-hidden="true">
@@ -1993,12 +2008,12 @@
         <div class="divider"></div>
         <div class="nosotros-body">
           <p>En el corazón de Verín, donde la Ruta de la Plata cruza la tierra de vinos de Monterrei, lleva años ardiendo una brasa que no se apaga. O Ferro nació del respeto por el producto gallego: carnes de primera, pescados frescos y el secreto de saber cuándo avivar el fuego.</p>
-          <p>Aquí no hay prisa ni artificios. Cada corte descansa el tiempo justo antes de encontrarse con el hierro caliente. El resultado lo conocen quienes repiten temporada tras temporada: 4,6 estrellas en Google que saben a humo y honestidad.</p>
+          <p>Aquí no hay prisa ni artificios. Cada corte descansa el tiempo justo antes de encontrarse con el hierro caliente. El resultado lo conocen quienes repiten temporada tras temporada: <span data-g-rating>4,6</span> estrellas en Google que saben a humo y honestidad.</p>
           <p>Te esperamos con copa fría y el mejor chuleto de vaca que hayas probado en la provincia de Ourense.</p>
         </div>
         <div class="nosotros-stats">
           <div class="stat-item">
-            <div class="stat-num">4,6</div>
+            <div class="stat-num" data-g-rating>4,6</div>
             <div class="stat-label">Valoración media</div>
           </div>
           <div class="stat-item">
@@ -2530,10 +2545,10 @@
       </div>
     </div>
     <div class="wow-comedor-item">
-      <img src="comedor_de_arriba.jpg" alt="Salón de arriba de O Ferro Parrilla para celebraciones" loading="lazy" />
+      <img src="comedor_de_arriba.jpg" alt="Salón principal de O Ferro Parrilla en Verín, con chimenea de piedra" loading="lazy" />
       <div class="wow-comedor-caption">
-        <span class="section-label">Para ocasiones especiales</span>
-        <p>Salón superior, ideal para celebraciones y grupos.</p>
+        <span class="section-label">El salón principal</span>
+        <p>Mesas vestidas, chimenea de piedra y el calor de la brasa de fondo.</p>
       </div>
     </div>
 </div>
@@ -2624,10 +2639,10 @@
     </div>
 
     <div class="rating-showcase reveal reveal-delay-1">
-      <div class="rating-big" aria-label="Valoración 4,6 sobre 5">4,6</div>
+      <div class="rating-big" data-g-rating aria-label="Valoración 4,6 sobre 5">4,6</div>
       <div class="rating-detail">
         <div class="stars-row" aria-hidden="true">★★★★★</div>
-        <div class="rating-meta">Reseñas verificadas en Google Maps</div>
+        <div class="rating-meta">Valoración en Google Maps · <span data-g-count>297</span> reseñas</div>
         <div style="margin-top:.5rem;font-size:.75rem;color:var(--stone);letter-spacing:.1em;">Mejor restaurante de parrilla en Verín</div>
       </div>
     </div>
@@ -2635,22 +2650,27 @@
     <div class="reviews-grid">
       <div class="review-card reveal">
         <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="review-text">"El chuletón estaba en su punto perfecto, jugoso por dentro y con esa costra que solo consigue una buena brasa. El servicio, impecable. Repetiremos sin duda."</p>
-        <div class="review-author">María L. · Verín</div>
-        <div class="review-platform">Google Maps</div>
+        <p class="review-text">"La comida muy muy buena y barata… comida a «tutiplén» y un sabor excelente, ya que prácticamente todo lo hacen a la brasa. El personal amabilísimo. Muy servicial y profesional."</p>
+        <div class="review-author">Mikel R. · Local Guide</div>
+        <a class="review-platform" href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener">Google Maps</a>
       </div>
       <div class="review-card reveal reveal-delay-1">
         <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="review-text">"De paso por Ourense buscando un sitio para cenar y dimos con O Ferro. No podríamos haber acertado más. Los chipirones a la plancha, exquisitos. El ambiente, muy acogedor."</p>
-        <div class="review-author">Carlos M. · Ourense</div>
-        <div class="review-platform">Google Maps</div>
+        <p class="review-text">"¡Genial! Una experiencia estupenda. Mi primera vez en Galicia y ha sido mi primera parada también. Un trato exquisito, nos han servido súper rápido. La comida muy muy rica. ¡Sin duda para volver!"</p>
+        <div class="review-author">Elena B.</div>
+        <a class="review-platform" href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener">Google Maps</a>
       </div>
       <div class="review-card reveal reveal-delay-2">
         <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="review-text">"La tabla de quesos gallegos es espectacular. Ambiente tranquilo, trato cercano y precios muy razonables para la calidad que ofrecen. Uno de los mejores de la zona."</p>
-        <div class="review-author">Lucía P. · Santiago de Compostela</div>
-        <div class="review-platform">Google Maps</div>
+        <p class="review-text">"Pasaba por allí y vi que tenían menú de fin de semana. El menú espectacular. En mi opinión barato para la calidad y cantidad del mismo. Sin duda repetiré si vuelvo a pasar. Totalmente recomendable."</p>
+        <div class="review-author">Juan Antonio M. · Local Guide</div>
+        <a class="review-platform" href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener">Google Maps</a>
       </div>
+    </div>
+
+    <div class="reviews-footer reveal">
+      <a href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener" class="btn btn-ghost">Ver todas las reseñas en Google</a>
+      <p class="reviews-disclaimer">Reseñas publicadas por clientes en Google Maps. Google no verifica las reseñas, pero retira el contenido falso cuando lo detecta.</p>
     </div>
   </div>
 </section>
@@ -2768,7 +2788,7 @@
             </div>
             <div class="contact-detail">
               <strong>Horario de servicio</strong>
-              <span>Dom–Mié: 11–17h · Jue–Sáb: 11–17h y 19:30–23h</span>
+              <span>Mar–Sáb: 11–17h y 19:30–23h · Dom: 11–17h · Lun: cerrado</span>
             </div>
           </li>
           <li>
@@ -2906,6 +2926,48 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<script>
+  /* ============================================================
+     Valoración en vivo desde Google Maps (Places API New)
+     - Si GOOGLE_API_KEY está vacía, la web muestra los valores
+       fijos del HTML (4,6 · 297 reseñas).
+     - La clave debe estar restringida en Google Cloud a:
+       · Sitios web: https://juanito2003.github.io/*
+       · API: Places API (New)
+       y con cuota diaria limitada para no generar coste.
+     ============================================================ */
+  (function () {
+    const GOOGLE_API_KEY = '';
+    const PLACE_ID = 'ChIJ9VNLq9vrOg0RxE82Fl43qfc'; // O FERRO Restaurante Parrilla, Verín
+    if (!GOOGLE_API_KEY) return;
+
+    const fmtRating = n => n.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const fmtCount = n => n.toLocaleString('es-ES');
+
+    fetch('https://places.googleapis.com/v1/places/' + PLACE_ID, {
+      headers: {
+        'X-Goog-Api-Key': GOOGLE_API_KEY,
+        'X-Goog-FieldMask': 'rating,userRatingCount'
+      }
+    })
+      .then(r => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then(data => {
+        if (typeof data.rating === 'number') {
+          const txt = fmtRating(data.rating);
+          document.querySelectorAll('[data-g-rating]').forEach(el => {
+            el.textContent = txt;
+            if (el.hasAttribute('aria-label')) el.setAttribute('aria-label', 'Valoración ' + txt + ' sobre 5');
+          });
+        }
+        if (typeof data.userRatingCount === 'number') {
+          const txt = fmtCount(data.userRatingCount);
+          document.querySelectorAll('[data-g-count]').forEach(el => { el.textContent = txt; });
+        }
+      })
+      .catch(() => { /* Si falla (cuota agotada, sin red...), se quedan los valores fijos */ });
+  })();
 </script>
 </body>
 </html>
