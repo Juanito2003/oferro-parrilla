@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>O Ferro Parrilla — Restaurante en Verín, Ourense | Carnes a la Brasa</title>
-  <meta name="description" content="O Ferro Parrilla, restaurante de carnes a la brasa en Verín, Ourense. Producto de primera calidad, 4,6 estrellas en Google. Menú del día L–V, menú degustación fines de semana. Reservas: 988 09 89 54." />
+  <meta name="description" content="O Ferro Parrilla, restaurante de carnes a la brasa en Verín, Ourense. Cocina gallega y mediterránea, producto de primera calidad y 4,6 estrellas en Google. Reservas: 988 09 89 54." />
   <meta name="keywords" content="restaurante Verín, parrilla Verín, carne a la brasa Ourense, restaurante Ourense, O Ferro, reservas Verín" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://juanito2003.github.io/oferro-parrilla/" />
@@ -809,144 +809,6 @@
     @media (max-width: 560px) {
       .platos-grid { grid-template-columns: 1fr; }
       .plato-card:first-child { grid-column: span 1; }
-    }
-
-    /* ===================== MENU DEL DIA ===================== */
-    #menu-dia {
-      padding: var(--section-pad) 0;
-      background: var(--coal);
-      position: relative;
-      z-index: 2;
-      clear: both;
-    }
-
-    .menu-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    .menu-card {
-      background: var(--charcoal);
-      border: 1px solid rgba(180, 147, 90, .15);
-      padding: 3rem;
-    }
-
-    .menu-price-badge {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      background: var(--ember);
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .menu-price-badge .price {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      line-height: 1;
-      color: #fff;
-    }
-
-    .menu-price-badge .price-label {
-      font-size: .6rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.75);
-      margin-top: 2px;
-    }
-
-    .menu-course {
-      padding: 1.2rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .menu-course:last-child { border-bottom: none; }
-
-    .course-header {
-      font-size: .65rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: .6rem;
-    }
-
-    .course-items {
-      list-style: none;
-    }
-
-    .course-items li {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      color: rgba(242, 237, 230, .75);
-      padding: .2rem 0;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .course-items li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--ember);
-      font-size: .7rem;
-    }
-
-    .menu-includes {
-      margin-top: 1.5rem;
-      padding: 1rem 1.2rem;
-      background: rgba(180, 147, 90, .08);
-      border-left: 2px solid var(--gold);
-    }
-
-    .menu-includes p {
-      font-size: .8rem;
-      color: var(--stone);
-      line-height: 1.6;
-    }
-
-    .menu-info { }
-
-    .menu-info .section-subtitle {
-      max-width: none;
-    }
-
-    .menu-services {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
-    .service-pill {
-      background: var(--charcoal);
-      border: 1px solid rgba(180, 147, 90, .2);
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: .8rem;
-    }
-
-    .service-pill svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-width: 1.5;
-      flex-shrink: 0;
-    }
-
-    .service-pill span {
-      font-size: .75rem;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(242, 237, 230, .7);
-    }
-
-    @media (max-width: 860px) {
-      .menu-layout { grid-template-columns: 1fr; gap: 3rem; }
     }
 
     /* ===================== RESENAS ===================== */
@@ -1803,11 +1665,6 @@
       .plato-card:first-child .plato-img { height: 280px; }
       .plato-desc { max-height: 60px !important; }
 
-      /* --- Menú del día --- */
-      .menu-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .menu-services { grid-template-columns: 1fr; gap: .7rem; }
-      .service-pill { padding: .9rem 1rem; }
-
       /* --- Reseñas --- */
       .reviews-grid { grid-template-columns: 1fr; }
       .rating-big { font-size: 5rem; }
@@ -1931,7 +1788,6 @@
       <a href="#nosotros">El Restaurante</a>
       <a href="#especialidades">Destacados</a>
       <a href="#carta">Carta</a>
-      <a href="#menu-dia">Menú</a>
       <a href="#resenas">Reseñas</a>
       <a href="#ubicacion">Ubicación</a>
       <a href="tel:+34988098954" class="btn nav-cta">
@@ -1949,7 +1805,6 @@
     <a href="#nosotros">El Restaurante</a>
     <a href="#especialidades">Destacados</a>
     <a href="#carta">Carta completa</a>
-    <a href="#menu-dia">Menú del Día</a>
     <a href="#resenas">Reseñas</a>
     <a href="#reservas">Reservas</a>
     <a href="#ubicacion">Ubicación</a>
@@ -1976,20 +1831,20 @@
       <img src="logo.jpg" alt="Logo O Ferro Parrilla" />
     </div>
     <h1 class="hero-title">O<br>FE<em>RRO</em></h1>
-    <p class="hero-subtitle">Onde o lume fai a tradición. Carnes a la brasa, producto gallego de primera y el calor de siempre.</p>
+    <p class="hero-subtitle">Onde o lume fai a tradición. Carnes y pescados a la brasa de carbón, recetas de siempre y producto de la tierra.</p>
     <div class="hero-actions">
       <a href="tel:+34988098954" class="btn btn-fire">
         <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;flex-shrink:0"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
         Llamar y reservar
       </a>
-      <a href="#especialidades" class="btn btn-ghost">Ver la carta</a>
+      <a href="#carta" class="btn btn-ghost">Ver la carta</a>
     </div>
   </div>
 
   <div class="hero-rating" aria-label="Valoración del restaurante">
-    <div class="rating-number" data-g-rating>4,6</div>
+    <div class="rating-number">4,6</div>
     <div class="rating-stars" aria-hidden="true">★★★★★</div>
-    <div class="rating-count"><span data-g-count>297</span> reseñas · Google</div>
+    <div class="rating-count">297 reseñas · Google</div>
   </div>
 
   <div class="hero-scroll" aria-hidden="true">
@@ -2007,13 +1862,13 @@
         <h2 class="section-title" id="nosotros-title">Tradición que<br>se huele antes de llegar</h2>
         <div class="divider"></div>
         <div class="nosotros-body">
-          <p>En el corazón de Verín, donde la Ruta de la Plata cruza la tierra de vinos de Monterrei, lleva años ardiendo una brasa que no se apaga. O Ferro nació del respeto por el producto gallego: carnes de primera, pescados frescos y el secreto de saber cuándo avivar el fuego.</p>
-          <p>Aquí no hay prisa ni artificios. Cada corte descansa el tiempo justo antes de encontrarse con el hierro caliente. El resultado lo conocen quienes repiten temporada tras temporada: <span data-g-rating>4,6</span> estrellas en Google que saben a humo y honestidad.</p>
-          <p>Te esperamos con copa fría y el mejor chuleto de vaca que hayas probado en la provincia de Ourense.</p>
+          <p>En la Avenida de Castilla, en pleno Verín, encendimos la parrilla en mayo de 2025 con una idea sencilla: cocinar como se hacía en casa. Carnes seleccionadas sobre brasa de carbón, pescado fresco, guisos de los de antes y los sabores de la cocina de la abuela.</p>
+          <p>Al frente de los fogones está Ferrán, que une la cocina gallega de siempre con el carácter del Mediterráneo y trata cada pieza con la paciencia que pide el fuego: el corte descansa lo justo, la brasa se aviva cuando toca y el plato sale en su punto. Producto de cercanía y elaboración al momento, sin atajos.</p>
+          <p>Te esperamos con copa fría y el mejor chuletón de vaca que hayas probado en la provincia de Ourense.</p>
         </div>
         <div class="nosotros-stats">
           <div class="stat-item">
-            <div class="stat-num" data-g-rating>4,6</div>
+            <div class="stat-num">4,6</div>
             <div class="stat-label">Valoración media</div>
           </div>
           <div class="stat-item">
@@ -2021,8 +1876,8 @@
             <div class="stat-label">Google Maps</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Producto gallego</div>
+            <div class="stat-num">Ferrán</div>
+            <div class="stat-label">Galicia y Mediterráneo</div>
           </div>
         </div>
       </div>
@@ -2064,7 +1919,7 @@
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
         </div>
         <h3 class="feature-title">Producto de Galicia</h3>
-        <p class="feature-text">Carnes de vaca galega con denominación de origen, chipirones de las rías, quesos nacionales de selección. La cadena corta no es moda aquí: es vocación.</p>
+        <p class="feature-text">Carnes de vaca galega con denominación de origen y chipirones de las rías. La cadena corta no es moda aquí: es vocación.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon" aria-hidden="true">
@@ -2087,7 +1942,7 @@
         <div class="divider"></div>
       </div>
       <p class="section-subtitle reveal reveal-delay-1">
-        Platos que han convertido O Ferro en una referencia de la parrilla en Verín y Ourense.
+        Los platos que más se piden y que más se recuerdan.
       </p>
     </div>
 
@@ -2553,82 +2408,6 @@
     </div>
 </div>
 
-<!-- ========== MENU DEL DIA ========== -->
-<section id="menu-dia" aria-labelledby="menu-title">
-  <div class="container">
-    <div class="menu-layout">
-      <div class="menu-card reveal">
-
-        <div class="menu-course">
-          <div class="course-header">Primer plato — ejemplos</div>
-          <ul class="course-items">
-            <li>Pimientos del Padrón</li>
-            <li>Oreja a Feira</li>
-            <li>Revuelto de huevos con champiñones</li>
-            <li>Espárragos trigueros a la brasa</li>
-            <li>Ensalada de tomate, cebolla y atún</li>
-          </ul>
-        </div>
-
-        <div class="menu-course">
-          <div class="course-header">Segundo plato — ejemplos</div>
-          <ul class="course-items">
-            <li>Churrasco de cerdo a la brasa</li>
-            <li>Falda de ternera a la brasa</li>
-            <li>Merluza a la gallega</li>
-            <li>Dorada a la brasa</li>
-            <li>Sepia a la plancha</li>
-          </ul>
-        </div>
-
-        <div class="menu-course">
-          <div class="course-header">Postre</div>
-          <ul class="course-items">
-            <li>Tarta de queso casera</li>
-            <li>Flan de huevo casero</li>
-            <li>Natillas caseras</li>
-          </ul>
-        </div>
-
-        <div class="menu-includes">
-          <p>Menú disponible de <strong style="color:var(--gold-lt)">lunes a viernes al mediodía</strong>. Los fines de semana al mediodía ofrecemos <strong style="color:var(--gold-lt)">menú degustación</strong>. Las noches, exclusivamente carta. Consulta disponibilidad al llamar.</p>
-        </div>
-      </div>
-
-      <div class="menu-info reveal reveal-delay-1">
-        <span class="section-label">Menú del día · Menú Degustación</span>
-        <h2 class="section-title" id="menu-title">Cocina al momento,<br>cada día</h2>
-        <div class="divider"></div>
-        <p class="section-subtitle">
-          Cada plato se elabora en el momento en que se pide. Sin precocciones, sin atajos. De lunes a viernes al mediodía, menú del día con producto fresco. Los fines de semana, menú degustación. Las noches, la carta en todo su esplendor.
-        </p>
-        <p class="section-subtitle" style="margin-top:.8rem;font-size:.95rem;">
-          Lo que llega a tu mesa sale de la brasa, no de ninguna nevera. Eso marca la diferencia.
-        </p>
-
-        <div class="menu-services">
-          <div class="service-pill">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span>En sala</span>
-          </div>
-          <div class="service-pill">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span>L–V al mediodía</span>
-          </div>
-          <div class="service-pill">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span>Sáb–Dom: degustación</span>
-          </div>
-          <div class="service-pill">
-            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1"/><path d="M2.1 2.3a2 2 0 012-.3h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 10A16 16 0 0014 16.9"/></svg>
-            <span>Reserva por telf.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ========== RESENAS ========== -->
 <section id="resenas" aria-labelledby="resenas-title">
   <div class="container">
@@ -2639,10 +2418,10 @@
     </div>
 
     <div class="rating-showcase reveal reveal-delay-1">
-      <div class="rating-big" data-g-rating aria-label="Valoración 4,6 sobre 5">4,6</div>
+      <div class="rating-big" aria-label="Valoración 4,6 sobre 5">4,6</div>
       <div class="rating-detail">
         <div class="stars-row" aria-hidden="true">★★★★★</div>
-        <div class="rating-meta">Valoración en Google Maps · <span data-g-count>297</span> reseñas</div>
+        <div class="rating-meta">Valoración en Google Maps · 297 reseñas</div>
         <div style="margin-top:.5rem;font-size:.75rem;color:var(--stone);letter-spacing:.1em;">Mejor restaurante de parrilla en Verín</div>
       </div>
     </div>
@@ -2928,46 +2707,5 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
-<script>
-  /* ============================================================
-     Valoración en vivo desde Google Maps (Places API New)
-     - Si GOOGLE_API_KEY está vacía, la web muestra los valores
-       fijos del HTML (4,6 · 297 reseñas).
-     - La clave debe estar restringida en Google Cloud a:
-       · Sitios web: https://juanito2003.github.io/*
-       · API: Places API (New)
-       y con cuota diaria limitada para no generar coste.
-     ============================================================ */
-  (function () {
-    const GOOGLE_API_KEY = '';
-    const PLACE_ID = 'ChIJ9VNLq9vrOg0RxE82Fl43qfc'; // O FERRO Restaurante Parrilla, Verín
-    if (!GOOGLE_API_KEY) return;
-
-    const fmtRating = n => n.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    const fmtCount = n => n.toLocaleString('es-ES');
-
-    fetch('https://places.googleapis.com/v1/places/' + PLACE_ID, {
-      headers: {
-        'X-Goog-Api-Key': GOOGLE_API_KEY,
-        'X-Goog-FieldMask': 'rating,userRatingCount'
-      }
-    })
-      .then(r => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then(data => {
-        if (typeof data.rating === 'number') {
-          const txt = fmtRating(data.rating);
-          document.querySelectorAll('[data-g-rating]').forEach(el => {
-            el.textContent = txt;
-            if (el.hasAttribute('aria-label')) el.setAttribute('aria-label', 'Valoración ' + txt + ' sobre 5');
-          });
-        }
-        if (typeof data.userRatingCount === 'number') {
-          const txt = fmtCount(data.userRatingCount);
-          document.querySelectorAll('[data-g-count]').forEach(el => { el.textContent = txt; });
-        }
-      })
-      .catch(() => { /* Si falla (cuota agotada, sin red...), se quedan los valores fijos */ });
-  })();
-</script>
 </body>
 </html>
