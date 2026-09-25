@@ -11,7 +11,7 @@
 
   <meta property="og:title" content="O Ferro Parrilla — Restaurante en Verín, Ourense" />
   <meta property="og:description" content="Carnes a la brasa de primera calidad. Onde o lume fai a tradición. Reservas: 988 09 89 54" />
-  <meta property="og:type" content="restaurant" />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://juanito2003.github.io/oferro-parrilla/" />
   <meta property="og:image" content="https://juanito2003.github.io/oferro-parrilla/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -54,7 +54,24 @@
     },
     "servesCuisine": ["Galician", "Grilled meats"],
     "priceRange": "€€",
-    "hasMap": "https://maps.app.goo.gl/cNvkHTzqgiZGTLTEA"
+    "hasMap": "https://maps.app.goo.gl/cNvkHTzqgiZGTLTEA",
+    "menu": "https://juanito2003.github.io/oferro-parrilla/#carta",
+    "acceptsReservations": "True",
+    "sameAs": ["https://www.instagram.com/oferro_"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "19:30",
+        "closes": "23:00"
+      }
+    ]
   }
   </script>
 
@@ -98,7 +115,7 @@
       max-width: 100vw;
     }
 
-    img { display: block; max-width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
     a { color: inherit; text-decoration: none; }
 
     ::selection { background: var(--ember); color: #fff; }
@@ -1267,6 +1284,40 @@
     .reveal-delay-1 { transition-delay: .1s; }
     .reveal-delay-2 { transition-delay: .2s; }
     .reveal-delay-3 { transition-delay: .3s; }
+
+    /* ===================== ACCESIBILIDAD ===================== */
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 1000;
+      padding: .8rem 1.2rem;
+      background: var(--ember);
+      color: #fff;
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 2px solid var(--gold-lt);
+      outline-offset: 3px;
+    }
+    main[tabindex]:focus, main[tabindex]:focus-visible { outline: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0s !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
     /* ===================== WOW: CHIMENEA FULLWIDTH ===================== */
     .wow-chimenea {
       position: relative;
@@ -1771,12 +1822,14 @@
 </head>
 <body>
 
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 <!-- ========== HEADER ========== -->
 <header id="site-header" role="banner">
   <div class="container header-inner">
     <a href="#" class="logo-wrap" aria-label="O Ferro Parrilla — Inicio">
       <div class="logo-icon" aria-hidden="true" style="background:#000;overflow:hidden;padding:0;">
-        <img src="logo.jpg" alt="Logo O Ferro Parrilla" style="width:100%;height:100%;object-fit:cover;" />
+        <img width="535" height="535" src="logo.jpg" alt="Logo O Ferro Parrilla" style="width:100%;height:100%;object-fit:cover;" />
       </div>
       <div class="logo-text">
         <span class="logo-main">O FERRO</span>
@@ -1812,14 +1865,17 @@
   </nav>
 </header>
 
+<main id="contenido" tabindex="-1">
+
 <!-- ========== HERO ========== -->
 <section id="hero" aria-label="Portada O Ferro Parrilla">
   <img
     class="hero-bg"
     src="chipirones.jpg"
     alt="Chipirones a la plancha en O Ferro Parrilla, Verín"
-    width="1920" height="1080"
+    width="1200" height="1600"
     loading="eager"
+    fetchpriority="high"
   />
   <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -1828,7 +1884,7 @@
       <span class="hero-tag">Verín · Ourense · Galicia</span>
     </div>
     <div class="hero-logo" aria-hidden="true">
-      <img src="logo.jpg" alt="Logo O Ferro Parrilla" />
+      <img width="535" height="535" src="logo.jpg" alt="Logo O Ferro Parrilla" />
     </div>
     <h1 class="hero-title">O<br>FE<em>RRO</em></h1>
     <p class="hero-subtitle">Onde o lume fai a tradición. Carnes y pescados a la brasa de carbón, recetas de siempre y producto de la tierra.</p>
@@ -1882,10 +1938,10 @@
 
       <div class="nosotros-images reveal reveal-delay-2">
         <div class="img-square">
-          <img src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada a la brasa con pimientos de Padrón en O Ferro" loading="lazy" />
+          <img width="1462" height="1600" src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada a la brasa con pimientos de Padrón en O Ferro" loading="lazy" />
         </div>
         <div class="img-square">
-          <img src="huevos_cabreados_bogavante.jpg" alt="Huevos cabreados con bogavante en O Ferro Parrilla" loading="lazy" />
+          <img width="1200" height="1600" src="huevos_cabreados_bogavante.jpg" alt="Huevos cabreados con bogavante en O Ferro Parrilla" loading="lazy" />
         </div>
       </div>
     </div>
@@ -1946,7 +2002,7 @@
 
     <div class="platos-grid">
       <div class="plato-card reveal">
-        <img class="plato-img" src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada a la brasa en O Ferro Verín" loading="lazy" />
+        <img width="1462" height="1600" class="plato-img" src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada a la brasa en O Ferro Verín" loading="lazy" />
         <div class="plato-overlay">
           <span class="plato-cat">Brasa · Estrella de la casa</span>
           <h3 class="plato-name">Chuletón de vaca madurada</h3>
@@ -1954,7 +2010,7 @@
         </div>
       </div>
       <div class="plato-card reveal reveal-delay-1">
-        <img class="plato-img" src="morcilla.jpg" alt="Morcilla de Burgos a la plancha en O Ferro Parrilla Verín" loading="lazy" />
+        <img width="900" height="1600" class="plato-img" src="morcilla.jpg" alt="Morcilla de Burgos a la plancha en O Ferro Parrilla Verín" loading="lazy" />
         <div class="plato-overlay">
           <span class="plato-cat">Entrantes · Tradición</span>
           <h3 class="plato-name">Morcilla de Burgos</h3>
@@ -1962,7 +2018,7 @@
         </div>
       </div>
       <div class="plato-card reveal reveal-delay-2">
-        <img class="plato-img" src="tarta_de_queso.jpg" alt="Tarta de queso casera con higos en O Ferro Verín" loading="lazy" />
+        <img width="1600" height="900" class="plato-img" src="tarta_de_queso.jpg" alt="Tarta de queso casera con higos en O Ferro Verín" loading="lazy" />
         <div class="plato-overlay">
           <span class="plato-cat">Postres · Caseros</span>
           <h3 class="plato-name">Tarta de queso casera</h3>
@@ -1970,7 +2026,7 @@
         </div>
       </div>
       <div class="plato-card reveal">
-        <img class="plato-img" src="huevos_cabreados_bogavante.jpg" alt="Huevos cabreados con bogavante en O Ferro Parrilla" loading="lazy" />
+        <img width="1200" height="1600" class="plato-img" src="huevos_cabreados_bogavante.jpg" alt="Huevos cabreados con bogavante en O Ferro Parrilla" loading="lazy" />
         <div class="plato-overlay">
           <span class="plato-cat">Entrantes · Alta gama</span>
           <h3 class="plato-name">Huevos cabreados con bogavante</h3>
@@ -1978,7 +2034,7 @@
         </div>
       </div>
       <div class="plato-card reveal reveal-delay-1">
-        <img class="plato-img" src="ensalada_templada.jpg" alt="Ensalada templada en O Ferro Parrilla" loading="lazy" />
+        <img width="1200" height="1600" class="plato-img" src="ensalada_templada.jpg" alt="Ensalada templada en O Ferro Parrilla" loading="lazy" />
         <div class="plato-overlay">
           <span class="plato-cat">Entrantes · De temporada</span>
           <h3 class="plato-name">Ensalada templada</h3>
@@ -1991,7 +2047,7 @@
 
 <!-- ========== WOW: CHIMENEA FULLWIDTH ========== -->
 <div class="wow-chimenea" aria-hidden="true">
-  <img src="chimenea.jpg" alt="La brasa de O Ferro Parrilla, Verín" loading="lazy" />
+  <img width="1200" height="1600" src="chimenea.jpg" alt="La brasa de O Ferro Parrilla, Verín" loading="lazy" />
   <div class="wow-chimenea-overlay">
     <div class="wow-chimenea-text reveal">
       <span class="section-label" style="color:var(--gold-lt)">El corazón de O Ferro</span>
@@ -2012,18 +2068,18 @@
 
     <!-- Tabs -->
     <div class="carta-tabs reveal reveal-delay-1" role="tablist" aria-label="Categorías de la carta">
-      <button class="carta-tab active" role="tab" aria-selected="true" data-cat="entrantes">Entrantes</button>
-      <button class="carta-tab" role="tab" aria-selected="false" data-cat="carnes">Carnes a la brasa</button>
-      <button class="carta-tab" role="tab" aria-selected="false" data-cat="pescados">Pescados</button>
-      <button class="carta-tab" role="tab" aria-selected="false" data-cat="postres">Postres</button>
+      <button class="carta-tab active" role="tab" aria-selected="true" id="tab-entrantes" aria-controls="panel-entrantes" data-cat="entrantes">Entrantes</button>
+      <button class="carta-tab" role="tab" aria-selected="false" id="tab-carnes" aria-controls="panel-carnes" data-cat="carnes">Carnes a la brasa</button>
+      <button class="carta-tab" role="tab" aria-selected="false" id="tab-pescados" aria-controls="panel-pescados" data-cat="pescados">Pescados</button>
+      <button class="carta-tab" role="tab" aria-selected="false" id="tab-postres" aria-controls="panel-postres" data-cat="postres">Postres</button>
     </div>
 
     <!-- ENTRANTES -->
-    <div class="carta-panel active" id="panel-entrantes" role="tabpanel">
+    <div class="carta-panel active" id="panel-entrantes" role="tabpanel" aria-labelledby="tab-entrantes">
       <div class="carta-grid">
 
         <div class="carta-item reveal" data-img="chipirones.jpg" data-desc="Chipirones frescos cocinados a la plancha con aceite de hierbas.">
-          <div class="carta-item-img"><img src="chipirones.jpg" alt="Chipirones a la plancha" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1200" height="1600" src="chipirones.jpg" alt="Chipirones a la plancha" loading="lazy"/></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Chipirones a la plancha</h3>
             <p class="carta-item-desc">Frescos, marcados a la plancha con aceite de hierbas.</p>
@@ -2031,7 +2087,7 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1" data-img="morcilla.jpg">
-          <div class="carta-item-img"><img src="morcilla.jpg" alt="Morcilla de Burgos" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="900" height="1600" src="morcilla.jpg" alt="Morcilla de Burgos" loading="lazy"/></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Morcilla de Burgos</h3>
             <p class="carta-item-desc">A la plancha, crujiente por fuera y fundente por dentro.</p>
@@ -2047,7 +2103,7 @@
         </div>
 
         <div class="carta-item carta-item--featured reveal reveal-delay-2">
-          <div class="carta-item-img"><img src="huevos_cabreados_bogavante.jpg" alt="Huevos cabreados con bogavante en O Ferro Parrilla" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1200" height="1600" src="huevos_cabreados_bogavante.jpg" alt="Huevos cabreados con bogavante en O Ferro Parrilla" loading="lazy"/></div>
           <div class="carta-item-info">
             <span class="carta-badge">Alta gama</span>
             <h3 class="carta-item-name">Huevos cabreados con bogavante</h3>
@@ -2056,7 +2112,7 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img"><img src="ensalada_templada.jpg" alt="Ensalada templada en O Ferro Parrilla" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1200" height="1600" src="ensalada_templada.jpg" alt="Ensalada templada en O Ferro Parrilla" loading="lazy"/></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Ensalada templada</h3>
             <p class="carta-item-desc">Verdura asada con tomate confitado, virutas de queso curado y una suave crema.</p>
@@ -2155,11 +2211,11 @@
     </div>
 
     <!-- CARNES -->
-    <div class="carta-panel" id="panel-carnes" role="tabpanel" hidden>
+    <div class="carta-panel" id="panel-carnes" role="tabpanel" aria-labelledby="tab-carnes" hidden>
       <div class="carta-grid">
 
         <div class="carta-item carta-item--featured reveal">
-          <div class="carta-item-img"><img src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1462" height="1600" src="chuleton_vaca.jpg" alt="Chuletón de vaca madurada" loading="lazy"/></div>
           <div class="carta-item-info">
             <span class="carta-badge">Estrella de la casa</span>
             <h3 class="carta-item-name">Chuletón vaca vieja madurada +30 días</h3>
@@ -2251,11 +2307,11 @@
     </div>
 
     <!-- PESCADOS -->
-    <div class="carta-panel" id="panel-pescados" role="tabpanel" hidden>
+    <div class="carta-panel" id="panel-pescados" role="tabpanel" aria-labelledby="tab-pescados" hidden>
       <div class="carta-grid">
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img"><img src="chipirones.jpg" alt="Chipirones" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1200" height="1600" src="chipirones.jpg" alt="Chipirones" loading="lazy"/></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Chipirones a la plancha</h3>
             <p class="carta-item-desc">Chipirones de las rías, marcados en plancha caliente con aceite de hierbas.</p>
@@ -2322,11 +2378,11 @@
     </div>
 
     <!-- POSTRES -->
-    <div class="carta-panel" id="panel-postres" role="tabpanel" hidden>
+    <div class="carta-panel" id="panel-postres" role="tabpanel" aria-labelledby="tab-postres" hidden>
       <div class="carta-grid">
 
         <div class="carta-item carta-item--featured reveal">
-          <div class="carta-item-img"><img src="tarta_de_queso.jpg" alt="Tarta de queso casera" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1600" height="900" src="tarta_de_queso.jpg" alt="Tarta de queso casera" loading="lazy"/></div>
           <div class="carta-item-info">
             <span class="carta-badge">Casero</span>
             <h3 class="carta-item-name">Tarta de queso casera</h3>
@@ -2335,7 +2391,7 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img"><img src="surtido_postres.jpg" alt="Surtido de postres caseros" loading="lazy"/></div>
+          <div class="carta-item-img"><img width="1600" height="739" src="surtido_postres.jpg" alt="Surtido de postres caseros" loading="lazy"/></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Surtido de postres caseros</h3>
             <p class="carta-item-desc">Selección de postres caseros para compartir y degustar.</p>
@@ -2391,14 +2447,14 @@
 <!-- ========== WOW: COMEDORES ========== -->
 <div class="wow-comedores" aria-label="Ambiente y comedores de O Ferro Parrilla">
     <div class="wow-comedor-item">
-      <img src="comedor_abajo.jpg" alt="Salón para celebraciones de O Ferro Parrilla" loading="lazy" />
+      <img width="1600" height="1200" src="comedor_abajo.jpg" alt="Salón para celebraciones de O Ferro Parrilla" loading="lazy" />
       <div class="wow-comedor-caption">
         <span class="section-label">Para ocasiones especiales</span>
         <p>Un salón íntimo, ideal para celebraciones y grupos.</p>
       </div>
     </div>
     <div class="wow-comedor-item">
-      <img src="comedor_de_arriba.jpg" alt="Salón principal de O Ferro Parrilla en Verín, con chimenea de piedra" loading="lazy" />
+      <img width="1200" height="1600" src="comedor_de_arriba.jpg" alt="Salón principal de O Ferro Parrilla en Verín, con chimenea de piedra" loading="lazy" />
       <div class="wow-comedor-caption">
         <span class="section-label">Salón principal</span>
         <p>Mesas vestidas, chimenea de piedra y el calor de la brasa de fondo.</p>
@@ -2616,11 +2672,13 @@
   </div>
 </section>
 
+</main>
+
 <!-- ========== FOOTER ========== -->
 <footer role="contentinfo">
   <div class="container footer-inner">
     <div class="footer-logo-wrap">
-      <img src="logo.jpg" alt="Logo O Ferro Parrilla" class="footer-logo-img" />
+      <img width="535" height="535" src="logo.jpg" alt="Logo O Ferro Parrilla" class="footer-logo-img" />
       <div class="footer-logo">
         O FERRO
         <small>Parrilla · Verín · Ourense</small>
@@ -2670,25 +2728,37 @@
     });
   });
 
-  // Carta tabs
-  document.querySelectorAll('.carta-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const cat = tab.dataset.cat;
-      document.querySelectorAll('.carta-tab').forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-      });
-      document.querySelectorAll('.carta-panel').forEach(p => {
-        p.classList.remove('active');
-        p.hidden = true;
-      });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      const panel = document.getElementById('panel-' + cat);
-      panel.classList.add('active');
-      panel.hidden = false;
-      // Re-trigger reveals for new panel
-      panel.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+  // Carta tabs (patrón WAI-ARIA: clic o flechas del teclado)
+  const tabs = Array.from(document.querySelectorAll('.carta-tab'));
+  function activateTab(tab) {
+    tabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+      t.tabIndex = -1;
+    });
+    document.querySelectorAll('.carta-panel').forEach(p => {
+      p.classList.remove('active');
+      p.hidden = true;
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.tabIndex = 0;
+    const panel = document.getElementById('panel-' + tab.dataset.cat);
+    panel.classList.add('active');
+    panel.hidden = false;
+    // Re-trigger reveals for new panel
+    panel.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+  }
+  tabs.forEach((tab, i) => {
+    tab.tabIndex = tab.classList.contains('active') ? 0 : -1;
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', e => {
+      const keys = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+      if (!(e.key in keys)) return;
+      e.preventDefault();
+      const next = tabs[(keys[e.key] + tabs.length) % tabs.length];
+      activateTab(next);
+      next.focus();
     });
   });
 
