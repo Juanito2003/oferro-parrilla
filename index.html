@@ -90,7 +90,7 @@
       --charcoal: #1E1A18;
       --smoke:    #2C2521;
       --ash:      #3D3531;
-      --stone:    #6B5E58;
+      --stone:    #A09087;
       --bone:     #F2EDE6;
       --cream:    #FBF8F3;
       --gold:     #B8935A;
@@ -1818,6 +1818,89 @@
       .ubicacion-grid { grid-template-columns: 1fr; }
     }
 
+    /* ===================== AJUSTES DE DISEÑO ===================== */
+    .horario-time,
+    .contact-detail,
+    .tel-link { font-variant-numeric: lining-nums tabular-nums; }
+    /* Italiana no tiene cifras alineadas: el teléfono va en Cormorant */
+    .tel-link { font-family: var(--font-serif); font-weight: 300; }
+
+    /* Oscurece el lado del texto para que se lea sobre la foto */
+    .hero-overlay {
+      background:
+        linear-gradient(to right, rgba(15, 11, 9, .75) 0%, rgba(15, 11, 9, .35) 45%, rgba(15, 11, 9, 0) 70%),
+        linear-gradient(to top, rgba(15, 11, 9, 1) 0%, rgba(15, 11, 9, .75) 35%, rgba(15, 11, 9, .3) 65%, rgba(15, 11, 9, .2) 100%);
+    }
+
+    .horario-status {
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin: -.5rem 0 1rem;
+    }
+    .horario-status:empty { display: none; }
+    .horario-status.is-open { color: #8FBF7A; }
+    .horario-row.today .horario-day { color: var(--gold-lt); }
+    .horario-row.today .horario-day::before { content: '• '; color: var(--ember); }
+
+    .stars-partial {
+      display: inline-block;
+      background: linear-gradient(90deg, currentColor 92%, rgba(242, 237, 230, .2) 92%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .map-wrap { background: var(--charcoal); }
+    .map-wrap::before {
+      content: 'Cargando mapa…';
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+    .map-wrap iframe { position: relative; }
+
+    .carta-more {
+      display: none;
+      width: 100%;
+      margin-top: 1px;
+      padding: 1rem;
+      background: var(--charcoal);
+      border: 1px solid rgba(180,147,90,.2);
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    @media (min-width: 861px) {
+      .floating-cta { display: none; }
+    }
+
+    @media (max-width: 860px) {
+      .carta-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .carta-tabs::-webkit-scrollbar { display: none; }
+      .carta-tabs .carta-tab {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: .8rem 1.1rem;
+      }
+      .carta-panel.is-collapsed .carta-grid > :nth-child(n+7) { display: none; }
+      .carta-panel.is-collapsed .carta-more { display: block; }
+    }
   </style>
 </head>
 <body>
@@ -1871,9 +1954,9 @@
 <section id="hero" aria-label="Portada O Ferro Parrilla">
   <img
     class="hero-bg"
-    src="chipirones.jpg"
-    alt="Chipirones a la plancha en O Ferro Parrilla, Verín"
-    width="1200" height="1600"
+    src="chuleton_vaca.jpg"
+    alt="Chuletón de vaca madurada a la brasa en O Ferro Parrilla, Verín"
+    width="1462" height="1600"
     loading="eager"
     fetchpriority="high"
   />
@@ -1882,9 +1965,6 @@
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span class="hero-tag">Verín · Ourense · Galicia</span>
-    </div>
-    <div class="hero-logo" aria-hidden="true">
-      <img width="535" height="535" src="logo.jpg" alt="Logo O Ferro Parrilla" />
     </div>
     <h1 class="hero-title">O<br>FE<em>RRO</em></h1>
     <p class="hero-subtitle">Onde o lume fai a tradición. Carnes y pescados a la brasa de carbón, recetas de siempre y producto de la tierra.</p>
@@ -1899,7 +1979,7 @@
 
   <div class="hero-rating" aria-label="Valoración del restaurante">
     <div class="rating-number">4,6</div>
-    <div class="rating-stars" aria-hidden="true">★★★★★</div>
+    <div class="rating-stars stars-partial" aria-hidden="true">★★★★★</div>
     <div class="rating-count">297 reseñas · Google</div>
   </div>
 
@@ -1926,7 +2006,7 @@
             <div class="stat-label">Valoración media</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">★★★★★</div>
+            <div class="stat-num stars-partial" aria-hidden="true">★★★★★</div>
             <div class="stat-label">Google Maps</div>
           </div>
           <div class="stat-item">
@@ -2095,7 +2175,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🦪</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Vieiras del Pacífico</h3>
             <p class="carta-item-desc">Frescas a la plancha, con la dulzura y textura características de la vieira del Pacífico.</p>
@@ -2120,7 +2199,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🍳</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Revuelto de huevos con champiñones</h3>
             <p class="carta-item-desc">Huevos revueltos con champiñones frescos de temporada.</p>
@@ -2128,7 +2206,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🌿</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Parrillada de verduras a la brasa</h3>
             <p class="carta-item-desc">Verduras de temporada cocinadas directamente a la brasa.</p>
@@ -2136,7 +2213,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🌶️</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Pimientos del Padrón</h3>
             <p class="carta-item-desc">Unos pican y otros no. El clásico gallego de siempre.</p>
@@ -2144,7 +2220,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🦐</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Gambones a la plancha</h3>
             <p class="carta-item-desc">Gambones frescos cocinados a la plancha con sal gruesa.</p>
@@ -2152,7 +2227,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🐚</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Almejas en salsa verde</h3>
             <p class="carta-item-desc">Almejas frescas en salsa verde, para mojar sin parar.</p>
@@ -2160,7 +2234,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🥗</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Ensalada de tomate, cebolla y atún</h3>
             <p class="carta-item-desc">Fresca, sencilla y llena de sabor.</p>
@@ -2168,7 +2241,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🍖</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Lacón á feira</h3>
             <p class="carta-item-desc">Lacón cocido y aderezado al estilo gallego de toda la vida.</p>
@@ -2176,7 +2248,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🥢</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Oreja á feira</h3>
             <p class="carta-item-desc">Oreja de cerdo al estilo gallego, suave y bien aliñada.</p>
@@ -2184,7 +2255,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🥦</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Espárragos trigueros a la brasa</h3>
             <p class="carta-item-desc">Espárragos trigueros marcados a la brasa con aceite y sal.</p>
@@ -2192,7 +2262,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🍄</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Champiñones a la brasa</h3>
             <p class="carta-item-desc">Champiñones frescos con ajo y perejil, a la brasa.</p>
@@ -2200,7 +2269,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🥓</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Espárragos con jamón</h3>
             <p class="carta-item-desc">Espárragos frescos envueltos en jamón serrano.</p>
@@ -2224,7 +2292,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🥩</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Chuletón de ternera del país (1 kg)</h3>
             <p class="carta-item-desc">Ternera gallega de primera, cocinada a la brasa en su punto.</p>
@@ -2232,7 +2299,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🔥</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Entrecot de vaca a la brasa</h3>
             <p class="carta-item-desc">Corte noble de vaca, sellado a alta temperatura para concentrar el sabor.</p>
@@ -2240,7 +2306,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🍗</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Churrascada</h3>
             <p class="carta-item-desc">Ternera, cerdo, panceta y criollo. La opción perfecta para compartir.</p>
@@ -2248,7 +2313,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🥩</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Entraña de vaca a la brasa</h3>
             <p class="carta-item-desc">Corte fino y jugoso, marcado a fuego vivo, de sabor intenso.</p>
@@ -2256,7 +2320,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🥩</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Picaña de vaca a la brasa</h3>
             <p class="carta-item-desc">Con su capa de grasa característica, asada lentamente hasta el punto perfecto.</p>
@@ -2264,7 +2327,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🐖</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Secreto a la brasa</h3>
             <p class="carta-item-desc">Pieza premium de cerdo, jugosa e intensa. Una de las favoritas.</p>
@@ -2272,7 +2334,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🌿</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Falda de ternera a la brasa</h3>
             <p class="carta-item-desc">Corte sabroso y jugoso, ideal para quienes buscan sabor puro.</p>
@@ -2280,7 +2341,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🍖</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Churrasco de cerdo a la brasa</h3>
             <p class="carta-item-desc">Clásico de la parrilla, cocinado lentamente para que quede en su punto.</p>
@@ -2288,7 +2348,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🐓</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Pollo a la brasa</h3>
             <p class="carta-item-desc">Pollo entero a la brasa, dorado por fuera y jugoso por dentro.</p>
@@ -2296,7 +2355,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🥩</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Solomillo de cerdo encebollado</h3>
             <p class="carta-item-desc">Solomillo tierno con cebolla caramelizada, suave y sabroso.</p>
@@ -2319,7 +2377,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🐟</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Lubina salvaje</h3>
             <p class="carta-item-desc">Lubina salvaje a la brasa. Sabor limpio de mar sin artificios.</p>
@@ -2327,7 +2384,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🐠</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Dorada a la brasa</h3>
             <p class="carta-item-desc">Dorada fresca, cocinada al punto con aceite y limón.</p>
@@ -2335,7 +2391,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🐡</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Merluza a la gallega</h3>
             <p class="carta-item-desc">Merluza fresca al estilo gallego clásico, con patata y pimentón.</p>
@@ -2343,7 +2398,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🌊</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Merluza en salsa verde</h3>
             <p class="carta-item-desc">Merluza en salsa verde con almejas. Un clásico que nunca decepciona.</p>
@@ -2351,7 +2405,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🦑</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Sepia a la plancha</h3>
             <p class="carta-item-desc">Sepia fresca en su punto, con un toque de ajo y perejil.</p>
@@ -2359,7 +2412,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🐟</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Bacalao a la portuguesa</h3>
             <p class="carta-item-desc">Bacalao preparado al estilo portugués, con la tradición de frontera que nos caracteriza.</p>
@@ -2367,7 +2419,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🥫</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Bacalao a la lata</h3>
             <p class="carta-item-desc">Bacalao confitado a baja temperatura, servido en su lata con aceite de oliva virgen y ajo dorado.</p>
@@ -2399,7 +2450,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🍮</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Flan de huevo casero</h3>
             <p class="carta-item-desc">El flan de siempre, con caramelo oscuro hecho en casa.</p>
@@ -2407,7 +2457,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🥞</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Filloas rellenas de nata</h3>
             <p class="carta-item-desc">Filloas gallegas con nata montada y sirope de chocolate, fresa o caramelo.</p>
@@ -2415,7 +2464,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-2">
-          <div class="carta-item-img carta-item-noimg"><span>🍯</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Natillas caseras</h3>
             <p class="carta-item-desc">Natillas tradicionales, suaves y con su toque de canela.</p>
@@ -2423,7 +2471,6 @@
         </div>
 
         <div class="carta-item reveal">
-          <div class="carta-item-img carta-item-noimg"><span>🍊</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Filloas a la Grand Marnier</h3>
             <p class="carta-item-desc">Filloas flambeadas con Grand Marnier, con el toque cítrico y dulce del licor de naranja.</p>
@@ -2431,7 +2478,6 @@
         </div>
 
         <div class="carta-item reveal reveal-delay-1">
-          <div class="carta-item-img carta-item-noimg"><span>🍰</span></div>
           <div class="carta-item-info">
             <h3 class="carta-item-name">Tarta de la abuela</h3>
             <p class="carta-item-desc">Receta de siempre a base de galleta y chocolate, tal y como la hacía la abuela.</p>
@@ -2474,7 +2520,7 @@
     <div class="rating-showcase reveal reveal-delay-1">
       <div class="rating-big" aria-label="Valoración 4,6 sobre 5">4,6</div>
       <div class="rating-detail">
-        <div class="stars-row" aria-hidden="true">★★★★★</div>
+        <div class="stars-row stars-partial" aria-hidden="true">★★★★★</div>
         <div class="rating-meta">Valoración en Google Maps · 297 reseñas</div>
         <div style="margin-top:.5rem;font-size:.75rem;color:var(--stone);letter-spacing:.1em;">Mejor restaurante de parrilla en Verín</div>
       </div>
@@ -2542,34 +2588,35 @@
 
       <div class="horarios-card reveal reveal-delay-1">
         <h3 class="horarios-title">Horario del restaurante</h3>
+        <p class="horario-status" id="horario-status" aria-live="polite"></p>
 
-        <div class="horario-row">
-          <span class="horario-day">Domingo</span>
-          <span class="horario-time">11:00 – 17:00</span>
-        </div>
-        <div class="horario-row closed">
+        <div data-day="1" class="horario-row closed">
           <span class="horario-day">Lunes</span>
           <span class="horario-time">Cerrado</span>
         </div>
-        <div class="horario-row">
+        <div data-day="2" class="horario-row">
           <span class="horario-day">Martes</span>
           <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
         </div>
-        <div class="horario-row">
+        <div data-day="3" class="horario-row">
           <span class="horario-day">Miércoles</span>
           <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
         </div>
-        <div class="horario-row">
+        <div data-day="4" class="horario-row">
           <span class="horario-day">Jueves</span>
           <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
         </div>
-        <div class="horario-row">
+        <div data-day="5" class="horario-row">
           <span class="horario-day">Viernes</span>
           <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
         </div>
-        <div class="horario-row">
+        <div data-day="6" class="horario-row">
           <span class="horario-day">Sábado</span>
           <span class="horario-time">11:00 – 17:00 · 19:30 – 23:00</span>
+        </div>
+        <div data-day="0" class="horario-row">
+          <span class="horario-day">Domingo</span>
+          <span class="horario-time">11:00 – 17:00</span>
         </div>
 
         <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(180,147,90,.15);">
@@ -2773,6 +2820,57 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // "Ver todos" en la carta (solo visible en móvil, por CSS)
+  document.querySelectorAll('.carta-panel').forEach(panel => {
+    const grid = panel.querySelector('.carta-grid');
+    const total = grid.children.length;
+    if (total <= 7) return;
+    const tab = document.getElementById(panel.getAttribute('aria-labelledby'));
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'carta-more';
+    btn.textContent = 'Ver todos los platos · ' + tab.textContent.trim().toLowerCase() + ' (' + total + ')';
+    btn.addEventListener('click', () => {
+      panel.classList.remove('is-collapsed');
+      btn.remove();
+    });
+    panel.classList.add('is-collapsed');
+    grid.after(btn);
+  });
+
+  // Horario: día de hoy y si está abierto ahora (hora de Madrid)
+  (function () {
+    const status = document.getElementById('horario-status');
+    if (!status) return;
+    const turnos = { 0: [[660, 1020]], 1: [], 2: [[660, 1020], [1170, 1380]], 3: [[660, 1020], [1170, 1380]],
+                     4: [[660, 1020], [1170, 1380]], 5: [[660, 1020], [1170, 1380]], 6: [[660, 1020], [1170, 1380]] };
+    const dias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    const hora = m => String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+    let dia, min;
+    try {
+      const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+      const get = t => parts.find(p => p.type === t).value;
+      dia = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+      min = parseInt(get('hour'), 10) * 60 + parseInt(get('minute'), 10);
+    } catch (e) { return; }
+    const row = document.querySelector('.horario-row[data-day="' + dia + '"]');
+    if (row) row.classList.add('today');
+    const abierto = turnos[dia].find(([a, c]) => min >= a && min < c);
+    if (abierto) {
+      status.textContent = 'Abierto ahora · hasta las ' + hora(abierto[1]);
+      status.classList.add('is-open');
+      return;
+    }
+    const hoy = turnos[dia].find(([a]) => a > min);
+    if (hoy) { status.textContent = 'Cerrado ahora · abre hoy a las ' + hora(hoy[0]); return; }
+    for (let i = 1; i <= 7; i++) {
+      const d = (dia + i) % 7;
+      if (turnos[d].length) {
+        status.textContent = 'Cerrado ahora · abre ' + (i === 1 ? 'mañana' : 'el ' + dias[d]) + ' a las ' + hora(turnos[d][0][0]);
+        return;
+      }
+    }
+  })();
 </script>
 
 </body>
