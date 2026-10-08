@@ -1940,7 +1940,7 @@
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- ========== HEADER ========== -->
-<header id="site-header" role="banner">
+<header id="site-header">
   <div class="container header-inner">
     <a href="#" class="logo-wrap" aria-label="O Ferro Parrilla — Inicio">
       <div class="logo-icon" aria-hidden="true" style="background:#000;overflow:hidden;padding:0;">
@@ -1964,7 +1964,7 @@
       </a>
     </nav>
 
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -1976,7 +1976,7 @@
     <a href="#resenas">Reseñas</a>
     <a href="#reservas">Reservas</a>
     <a href="#ubicacion">Ubicación</a>
-    <a href="tel:+34988098954" style="color:var(--gold)">📞 988 09 89 54</a>
+    <a href="tel:+34988098954" style="color:var(--gold)">📞 988&nbsp;09&nbsp;89&nbsp;54</a>
   </nav>
 </header>
 
@@ -2010,7 +2010,7 @@
     </div>
   </div>
 
-  <div class="hero-rating" aria-label="Valoración del restaurante">
+  <div class="hero-rating" role="group" aria-label="Valoración del restaurante">
     <div class="rating-number">4,6</div>
     <div class="rating-stars stars-partial" aria-hidden="true">★★★★★</div>
     <div class="rating-count">297 reseñas · Google</div>
@@ -2181,10 +2181,10 @@
 
     <!-- Tabs -->
     <div class="carta-tabs reveal reveal-delay-1" role="tablist" aria-label="Categorías de la carta">
-      <button class="carta-tab active" role="tab" aria-selected="true" id="tab-entrantes" aria-controls="panel-entrantes" data-cat="entrantes">Entrantes</button>
-      <button class="carta-tab" role="tab" aria-selected="false" id="tab-carnes" aria-controls="panel-carnes" data-cat="carnes">Carnes a la brasa</button>
-      <button class="carta-tab" role="tab" aria-selected="false" id="tab-pescados" aria-controls="panel-pescados" data-cat="pescados">Pescados</button>
-      <button class="carta-tab" role="tab" aria-selected="false" id="tab-postres" aria-controls="panel-postres" data-cat="postres">Postres</button>
+      <button type="button" class="carta-tab active" role="tab" aria-selected="true" id="tab-entrantes" aria-controls="panel-entrantes" data-cat="entrantes">Entrantes</button>
+      <button type="button" class="carta-tab" role="tab" aria-selected="false" id="tab-carnes" aria-controls="panel-carnes" data-cat="carnes">Carnes a la brasa</button>
+      <button type="button" class="carta-tab" role="tab" aria-selected="false" id="tab-pescados" aria-controls="panel-pescados" data-cat="pescados">Pescados</button>
+      <button type="button" class="carta-tab" role="tab" aria-selected="false" id="tab-postres" aria-controls="panel-postres" data-cat="postres">Postres</button>
     </div>
 
     <!-- ENTRANTES -->
@@ -2524,7 +2524,7 @@
 </section>
 
 <!-- ========== WOW: COMEDORES ========== -->
-<div class="wow-comedores" aria-label="Ambiente y comedores de O Ferro Parrilla">
+<div class="wow-comedores" role="group" aria-label="Ambiente y comedores de O Ferro Parrilla">
     <div class="wow-comedor-item">
       <img width="1600" height="1200" src="comedor_abajo.jpg" alt="Salón para celebraciones de O Ferro Parrilla" loading="lazy" />
       <div class="wow-comedor-caption">
@@ -2532,7 +2532,7 @@
         <p>Un salón íntimo, ideal para celebraciones y grupos.</p>
         <a href="tel:+34988098954" class="btn btn-fire comedor-cta" aria-label="Llamar al 988 09 89 54 para reservar para grupos y celebraciones">
           <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2;flex-shrink:0"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
-          Grupos: llama al 988 09 89 54
+          Grupos: llama al 988&nbsp;09&nbsp;89&nbsp;54
         </a>
       </div>
     </div>
@@ -2555,7 +2555,7 @@
     </div>
 
     <div class="rating-showcase reveal reveal-delay-1">
-      <div class="rating-big" aria-label="Valoración 4,6 sobre 5">4,6</div>
+      <div class="rating-big" role="img" aria-label="Valoración 4,6 sobre 5">4,6</div>
       <div class="rating-detail">
         <div class="stars-row stars-partial" aria-hidden="true">★★★★★</div>
         <div class="rating-meta">Valoración en Google Maps · 297 reseñas</div>
@@ -2565,19 +2565,19 @@
 
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+        <div class="review-stars" role="img" aria-label="5 estrellas">★★★★★</div>
         <p class="review-text">"La comida muy muy buena y barata… comida a «tutiplén» y un sabor excelente, ya que prácticamente todo lo hacen a la brasa. El personal amabilísimo. Muy servicial y profesional."</p>
         <div class="review-author">Mikel R. · Local Guide</div>
         <a class="review-platform" href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener">Google Maps</a>
       </div>
       <div class="review-card reveal reveal-delay-1">
-        <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+        <div class="review-stars" role="img" aria-label="5 estrellas">★★★★★</div>
         <p class="review-text">"¡Genial! Una experiencia estupenda. Mi primera vez en Galicia y ha sido mi primera parada también. Un trato exquisito, nos han servido súper rápido. La comida muy muy rica. ¡Sin duda para volver!"</p>
         <div class="review-author">Elena B.</div>
         <a class="review-platform" href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener">Google Maps</a>
       </div>
       <div class="review-card reveal reveal-delay-2">
-        <div class="review-stars" aria-label="5 estrellas">★★★★★</div>
+        <div class="review-stars" role="img" aria-label="5 estrellas">★★★★★</div>
         <p class="review-text">"Compartimos dos personas una lubina salvaje espectacular y un plato de entraña deliciosa hecha en la parrilla que está a la vista en el comedor, y de postre una filloa de nata. Precios comedidos. Excelente atención personal… Sin duda, el sitio para comer en Verín. Volveremos."</p>
         <div class="review-author">Julián A.</div>
         <a class="review-platform" href="https://www.google.com/maps/place/?q=place_id:ChIJ9VNLq9vrOg0RxE82Fl43qfc" target="_blank" rel="noopener">Google Maps</a>
@@ -2607,7 +2607,7 @@
           <p class="tel-label">Llámanos ahora</p>
           <a href="tel:+34988098954" class="tel-link" aria-label="Llamar al restaurante O Ferro: 988 09 89 54">
             <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
-            988 09 89 54
+            988&nbsp;09&nbsp;89&nbsp;54
           </a>
           <p class="tel-note">Disponible en horario de servicio</p>
         </div>
@@ -2664,7 +2664,7 @@
 
         <a href="tel:+34988098954" class="btn btn-fire" style="margin-top:1.5rem;width:100%;justify-content:center;">
           <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;flex-shrink:0"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013.7 11 19.8 19.8 0 01.6 2.4a2 2 0 012-2.2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L7.1 8.1A16 16 0 0015.1 16l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
-          988 09 89 54 — Reservar ahora
+          988&nbsp;09&nbsp;89&nbsp;54 — Reservar ahora
         </a>
       </div>
     </div>
@@ -2696,7 +2696,7 @@
             </div>
             <div class="contact-detail">
               <strong>Teléfono (reservas)</strong>
-              <a href="tel:+34988098954">988 09 89 54</a>
+              <a href="tel:+34988098954">988&nbsp;09&nbsp;89&nbsp;54</a>
             </div>
           </li>
           <li>
@@ -2759,7 +2759,7 @@
 </main>
 
 <!-- ========== FOOTER ========== -->
-<footer role="contentinfo">
+<footer>
   <div class="container footer-inner">
     <div class="footer-logo-wrap">
       <img width="535" height="535" src="logo.jpg" alt="Logo O Ferro Parrilla" class="footer-logo-img" />
@@ -2774,7 +2774,7 @@
         <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         @oferro_
       </a>
-      <p class="footer-copy">© 2026 O Ferro Parrilla · Av. de Castilla, 49, Verín · <a href="tel:+34988098954" style="color:var(--gold)">988 09 89 54</a></p>
+      <p class="footer-copy">© 2026 O Ferro Parrilla · Av. de Castilla, 49, Verín · <a href="tel:+34988098954" style="color:var(--gold)">988&nbsp;09&nbsp;89&nbsp;54</a></p>
     </div>
   </div>
 </footer>
