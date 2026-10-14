@@ -1,5 +1,7 @@
 # O Ferro Parrilla — web
 
+[![Validar HTML](https://github.com/Juanito2003/oferro-parrilla/actions/workflows/validar-html.yml/badge.svg)](https://github.com/Juanito2003/oferro-parrilla/actions/workflows/validar-html.yml)
+
 Web del restaurante **O Ferro Parrilla**, asador de carnes a la brasa en Verín (Ourense).
 
 **Estado:** en desarrollo, aún sin publicar oficialmente.
@@ -25,6 +27,7 @@ Una sola página con navegación por secciones:
 - SEO: etiquetas Open Graph para compartir en redes, datos estructurados JSON-LD, `sitemap.xml` y `robots.txt`.
 - Iconos para navegador y móvil (`favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`).
 - Accesibilidad: textos alternativos en todas las fotos, menú y pestañas con atributos ARIA, valoraciones con texto para lectores de pantalla.
+- HTML validado con `html-validate` (reglas en `.htmlvalidate.json`) en cada push y pull request con GitHub Actions.
 - Vista previa en GitHub Pages desde la rama `main`.
 
 ## Ver en local
