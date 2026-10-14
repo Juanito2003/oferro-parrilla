@@ -60,10 +60,23 @@ oferro-parrilla/
 
 ## Añadir o cambiar fotos
 
-Para que la web cargue rápido en móvil:
+Cada foto está en JPEG (respaldo) y en WebP en varios anchos, y la página usa `<picture>` para que cada móvil u ordenador descargue solo el tamaño que necesita:
 
-- Lado largo de **1200 px como máximo** y calidad JPEG en torno a **80**.
-- En la etiqueta `<img>`, indica `width` y `height` con la proporción de la foto (evita saltos al cargar), un `alt` que describa lo que se ve y `loading="lazy"` si no está en la portada.
+```html
+<picture>
+  <source type="image/webp"
+          srcset="foto-400.webp 400w, foto-800.webp 800w, foto.webp 1200w"
+          sizes="(max-width: 600px) 92vw, 380px">
+  <img src="foto.jpg" width="1200" height="900" alt="Qué se ve en la foto" loading="lazy">
+</picture>
+```
+
+Para una foto nueva:
+
+1. Guárdala en JPEG con el lado largo de **1200 px como máximo** y calidad en torno a **80**.
+2. Genera las versiones WebP de 400 y 800 px de ancho y la de tamaño completo (`cwebp -q 78 -resize 400 0 foto.jpg -o foto-400.webp`; la de 800 igual, y la completa sin `-resize`). Si la foto mide menos de 800 px de ancho, sáltate esa versión.
+3. En `sizes`, pon el ancho al que se ve la foto en la página. Copia el de otra foto del mismo bloque.
+4. En el `<img>`, indica `width` y `height` con la proporción de la foto (evita saltos al cargar), un `alt` que describa lo que se ve y `loading="lazy"` si no está en la portada.
 
 ## Vista previa
 
