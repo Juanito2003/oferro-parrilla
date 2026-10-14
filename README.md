@@ -2,7 +2,9 @@
 
 Web del restaurante **O Ferro Parrilla**, asador de carnes a la brasa en Verín (Ourense).
 
-**En producción:** <https://juanito2003.github.io/oferro-parrilla/>
+**Estado:** en desarrollo, aún sin publicar oficialmente.
+
+**Vista previa:** <https://juanito2003.github.io/oferro-parrilla/>
 
 ## Qué incluye
 
@@ -23,7 +25,7 @@ Una sola página con navegación por secciones:
 - SEO: etiquetas Open Graph para compartir en redes, datos estructurados JSON-LD, `sitemap.xml` y `robots.txt`.
 - Iconos para navegador y móvil (`favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`).
 - Accesibilidad: textos alternativos en todas las fotos, menú y pestañas con atributos ARIA, valoraciones con texto para lectores de pantalla.
-- Publicada con GitHub Pages desde la rama `main`.
+- Vista previa en GitHub Pages desde la rama `main`.
 
 ## Ver en local
 
@@ -60,6 +62,6 @@ Para que la web cargue rápido en móvil:
 - Lado largo de **1200 px como máximo** y calidad JPEG en torno a **80**.
 - En la etiqueta `<img>`, indica `width` y `height` con la proporción de la foto (evita saltos al cargar), un `alt` que describa lo que se ve y `loading="lazy"` si no está en la portada.
 
-## Publicar cambios
+## Vista previa
 
-Cada push a `main` se publica automáticamente en GitHub Pages en uno o dos minutos.
+Cada push a `main` actualiza la vista previa en GitHub Pages en uno o dos minutos.
