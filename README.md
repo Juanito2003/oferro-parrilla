@@ -55,8 +55,13 @@ oferro-parrilla/
 ├── og-image.jpg        Imagen al compartir en redes (1200x630)
 ├── favicon*, apple-touch-icon.png
 ├── sitemap.xml, robots.txt
-└── package.json        Scripts para el servidor local
+├── package.json        Scripts para el servidor local
+└── .claude/skills/     Guías para Claude Code (no forman parte de la web)
 ```
+
+### Skills de Claude Code
+
+`.claude/skills/` tiene 8 skills de [ECC](https://github.com/affaan-m/ecc) que Claude Code usa al trabajar en la web: `seo`, `accessibility`, `frontend-a11y`, `frontend-design-direction`, `design-system`, `make-interfaces-feel-better`, `browser-qa` y `canary-watch`. Solo son instrucciones de texto: no se publican ni cambian nada de la página. El resto de `.claude/` está en el `.gitignore`.
 
 ## Añadir o cambiar fotos
 
